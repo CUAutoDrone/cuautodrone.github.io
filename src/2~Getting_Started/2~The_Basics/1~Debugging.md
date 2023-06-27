@@ -1,3 +1,2 @@
 # Debugging and Testing
-
-Debugging can be one of the more tedious, unfun aspects of coding, despite this, it is nessesary 
+Debugging can be one of the more tedious, unfun aspects of coding. Despite this, it is a nessesary part of every project. This document will go over a few tricks to get better at debugging and the testing protocols you should adhere to. 
