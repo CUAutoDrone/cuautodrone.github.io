@@ -1,0 +1,199 @@
+:root {
+    --pure-white: #ffffff;
+    --off-white: #e4e4e4;
+    --grey-white: #ccc;
+    --background: #1a1a1a;
+    --hyperlink: #3498db;
+    --hyperlink-hover: #5ab9ea;
+    --navbar: #2e2e2e;
+    --larger: 20px;
+}
+
+
+body {
+    background-color: var(--background);
+    color: var(--pure-white);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    width: min(70vw, 1000px);
+    margin: 0 auto;
+    padding: 20px;
+    padding-left: max(250px, 5vw);
+    padding-right: 5vw
+}
+
+
+.markdown>p>img {
+    max-width: min(70vw, 1000px);
+    display: inline-block;
+}
+
+pre {
+    display: inline-block;
+    overflow-x: auto;
+    width: min(70vw, 1000px);
+}
+
+
+a {
+    color: var(--hyperlink);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--hyperlink-hover);
+}
+
+.copy-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 18px;
+    color: var(--grey-white);
+    cursor: pointer;
+    font-family: 'Material Icons', sans-serif;
+    user-select: none;
+}
+
+.copy-icon:hover {
+    color: var(--pure-white);
+}
+
+.copy-icon.checkmark {
+    cursor: default;
+    color: var(--pure-white);
+}
+
+
+.sidebar {
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    background-color: var(--navbar);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-top: 0px;
+    padding-left: 15px;
+}
+
+#CUAD_Logo {
+    overflow-x: hidden;
+    transform: translateX(-10px);
+    padding-top: 10px;
+    max-width: 200px;
+}
+
+/* width */
+.sidebar::-webkit-scrollbar {
+    width: 2px;
+}
+
+/* Track */
+.sidebar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+.sidebar::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.categories {
+    transform: translateY(-10px);
+    max-width: 190px;
+    overflow-wrap: break-word;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.category-name {
+    font-weight: bold;
+    font-size: var(--larger);
+    display: block;
+    padding-top: 15px;
+    color: var(--pure-white);
+}
+
+.sections {
+    font-size: medium;
+    padding-left: 10px;
+    list-style-type: none;
+}
+
+.section-name {
+    padding-top: 5px;
+    max-width: 150px;
+    overflow-wrap: break-word;
+    font-size: large;
+    display: inline-block;
+    color: var(--pure-white);
+}
+
+.section-name:hover {
+    color: var(--off-white);
+    cursor: pointer;
+}
+
+
+.show-subsections {
+    float: right;
+    padding-right: 10px;
+    padding-top: 5px;
+    transform: translateY(7px);
+    user-select: none;
+    color: var(--pure-white);
+    /* display: inline-block; */
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: medium;
+}
+
+.show-subsections:focus {
+    outline: none;
+}
+
+.show-subsections:hover {
+    outline: none;
+    color: var(--off-white);
+}
+
+.selected {
+    color: white !important;
+    font-weight: bolder;
+}
+
+.subsections {
+    max-width: 160px;
+    overflow-wrap: break-word;
+    padding-left: 20px;
+    list-style-type: none;
+    display: none;
+}
+
+.subsection a {
+    display: block;
+    padding: 3px 0;
+    color: var(--off-white);
+}
+
+.subsection a:hover {
+    color: var(--grey-white);
+}
+
+.rotate-icon {
+    transform: rotate(180deg);
+}
