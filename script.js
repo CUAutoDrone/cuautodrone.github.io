@@ -1,11 +1,10 @@
 const slide_speed = 200
 displayMd('README.md')
 
-fetch('navbar.json')  // Replace 'example.json' with the path to your JSON file
+fetch('navbar.json')
     .then(response => response.json())
     .then(response => makeCategories(response))
     .catch(error => {
-        // Handle any errors that occurred during the fetch or parsing
         console.error('Error:', error);
     });
 // prepareDocs()
