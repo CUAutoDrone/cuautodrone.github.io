@@ -1,18 +1,18 @@
 # Code Quality and Documentation
-In general there are no strict rules when it comes to code quality and documentation. There are definetly conflicting opinions, so this doc will lay out some general guidelines and some conventions that we would like you to adhere to. Some of this is adapted from Python's [PEP8](https://peps.python.org/pep-0008/) style guide.
+In general, there are no strict rules when it comes to code quality and documentation. There are definitely conflicting opinions, so this doc will lay out some general guidelines and some conventions that we would like you to adhere to. Some of this is adapted from Python's [PEP8](https://peps.python.org/pep-0008/) style guide.
 
 ## Variable Naming
 There are a few different common naming styles, here are some of them
-- *camelCase* is where all but the first word is capatalized. Usually used for typical variables, i.e. for an int, float, string, list, etc.
-- *snake_case* is where all letters are lowercase, seperated by underscores. Usually used for functions or variables.
-- *CapCase* is where every word is capatalized. Usually used for classes.
-- *ALL_UPPERCASE* is where all letters are capatalized, seperated by underscores. Usually used for constants that will not change value.
+- *camelCase* is where all but the first word is capitalized. Usually used for typical variables, i.e. for an int, float, string, list, etc.
+- *snake_case* is where all letters are lowercase, separated by underscores. Usually used for functions or variables.
+- *CapCase* is where every word is capitalized. Usually used for classes.
+- *ALL_UPPERCASE* is where all letters are capitalized, and separated by underscores. Usually used for constants that will not change value.
 
-The above uses are just guidelines, consistency is more important that adhering to strict rules. If you are working on existing code, use whatever rules are already there (or maybe edit it to match).
+The above uses are just guidelines, consistency is more important than adhering to strict rules. If you are working on existing code, use whatever rules are already there (or maybe edit it to match).
 
-In almost all cases, don't use single letters for variable names. I promise you that the extra time it takes to type out a real name will be less that the time it will take you (or someone else) to figure out what the hell 's' means in 3 months when looking at some old code. There are a few exceptions to this rule, when in a loop and counting iterations, its perfectly ok (unless the iterations mean something specific) to use 'i', 'j', and 'k' (in that order). Also, when referencing coordinates its fine to use 'x', 'y' and 'z'. Finally, for a purely mathematical function (i.e. sqrt, gcd) it might make sense to have single letter parameters like 'x' or 'n' to a function (although you probably want to use NumPy anyways).
+In almost all cases, don't use single letters for variable names. I promise you that the extra time it takes to type out a real name will be less than the time it will take you (or someone else) to figure out what the hell 's' means in 3 months when looking at some old code. There are a few exceptions to this rule, when in a loop and counting iterations, it's perfectly ok (unless the iterations mean something specific) to use 'i', 'j', and 'k' (in that order). Also, when referencing coordinates it's fine to use 'x', 'y', and 'z'. Finally, for a purely mathematical function (i.e. sqrt, gcd) it might make sense to have single-letter parameters like 'x' or 'n' to a function (although you probably want to use NumPy anyways).
 
-Don't worry too much about long variable names, if you need a few words to describe the variable well, thats fine! Typing and reading are both faster than trying to parse confusing names. Also,  keep abeviations limited to common ones like img for image or lst for list.
+Don't worry too much about long variable names, if you need a few words to describe the variable well, that's fine! Typing and reading are both faster than trying to parse confusing names. Also,  keep abbreviations limited to common ones like img for image or lst for list.
 
 ## Code Formatting
 We would like you to use a formatter. This will change the whitespace (and sometimes [other stuff](https://peps.python.org/pep-0008/)) in your code according to some consistent rules. It doesn't always make the code look better but it helps make code consistent to read even when written by multiple people.
@@ -20,18 +20,18 @@ We would like you to use a formatter. This will change the whitespace (and somet
 To set this up in VS Code, go to settings (Ctrl/Cmd+,) and search "format on save" and check the box. When you first save, there is going to be a popup in the bottom right corner that will ask you to install a formatter. Just click the blue option. Now, your code will be formatted whenever it is saved.
 
 ## Documentation and Function Specification
-To document a function, you need to write a specification. This is a description of what the function does that should fully specify the behaviour of the function for any input. 
-- The first part of a specification is a short 1-2 sentence description of the functions purpose. This should exist for every function.
-- Then you want to describe what it takes as parameters, this should include a description for each paramter, any requirements that parameter must fulfill, and all optional parameters and their default values.
+To document a function, you need to write a specification. This is a description of what the function does that should fully specify the behavior of the function for any input. 
+- The first part of a specification is a short 1-2 sentence description of the function's purpose. This should exist for every function.
+- Then you want to describe what it takes as parameters, this should include a description for each parameter, any requirements that parameter must fulfill, and all optional parameters and their default values.
 - Then describe what it returns/does. This means you need to fully explain
     - Any side effects.
     - The return value.
     - Any raised exceptions (and when they happen).
 - Finally, examples often help to clarify exactly what the function does and the format of the return value.
 
-The detail of the specification is context dependent, for a simple function or one that is easy to describe (i.e. sort) it may be resonable to skip or limit the detail of some of these parts.
+The detail of the specification is context-dependent, for a simple function or one that is easy to describe (i.e. sort) it may be reasonable to skip or limit the detail of some of these parts.
 
-Heres an example with the maximum amount of detail you might need.
+Here's an example with the maximum amount of detail you might need.
 
 ```python
 def format_time(time):
@@ -41,9 +41,9 @@ def format_time(time):
     @param time: the time to be formatted in units of seconds
     requires: time is a non-negative number
 
-    @returns: a string of equivalent time in hours, minutes and seconds separated by colons (:)
+    @returns: a string of equivalent time in hours, minutes, and seconds separated by colons (:)
     The minutes and seconds will be in the range 0-59 and seconds will have two significant digits.
-    If hours is 0 it will be omitted. If the hours and minutes are 0 then they will be omitted.
+    If hours are 0 it will be omitted. If the hours and minutes are 0 then they will be omitted.
     Minutes and seconds have leading 0s to two digits when after a colon.
 
     Ex.
@@ -53,7 +53,7 @@ def format_time(time):
     """
     ...
 ```
-For many functions, something like the first sentence would suffice. If the function is very specific, some examples showing different behaviours really helps clarify. Writing "Minutes and seconds have leading 0s to two digits when after a colon." is fine but the actual examples make it much more clear.
+For many functions, something like the first sentence would suffice. If the function is very specific, some examples showing different behaviors really help clarify. Writing "Minutes and seconds have leading 0s to two digits when after a colon." is fine but the actual examples make it much more clear.
 
 ## Code Comments
 Comments should be brief. Don't write comments for every little snippet of code, save them for things that are non-obvious or unusual. Comments can also be valuable for explaining in more detail what a constant or variable represents. Another good use of comments is to explain *why* code is what it is. Here is an example of a bad comment. 
@@ -61,19 +61,19 @@ Comments should be brief. Don't write comments for every little snippet of code,
 # doubles width
 width = 2 * width
 ```
-It is unnessesary because the code says what the comment does just as clearly. A more useful comment would explain why width needs to be doubled, for example
+It is unnecessary because the code says what the comment does just as clearly. A more useful comment would explain why the width needs to be doubled, for example
 ```python
-# compensate for screen size
+# Compensate for screen size
 width = 2 * width
 ```
-although it might be even better to have the code more explicitly describe what its doing like this
+although it might be even better to have the code more explicitly describe what it's doing like this
 ```python
 screen_size_scale_factor = 2
 width *= screen_size_scale_factor
 ```
-Now the comment is unnessesary. Plus, if you ever have to change the code, you won't have to remember to change all the comments too. If possible, write the code to make commenting redundant.
+Now the comment is unnecessary. Plus, if you ever have to change the code, you won't have to remember to change all the comments too. If possible, write the code to make commenting redundant.
 
-Another reason to use comments is if code is doing something complex. For example, if you are using an algorithm its worth mentioning what it is.
+Another reason to use comments is if the code is doing something complex. For example, if you are using an algorithm it's worth mentioning what it is.
 
 ```python
 def sort(lst):
@@ -83,10 +83,10 @@ def sort(lst):
     # Uses Quicksort to sort the list
     ...
 ```
-Finally, if you have a strange way of storing information in a class or are doing something unusual for performance reasons, thats worth commenting. 
+Finally, if you have a strange way of storing information in a class or are doing something unusual for performance reasons, that's worth commenting. 
 
 ## Libraries and Modules
-We don't always have to write our own code. Using Python often libraries leads to more readable and faster code (NumPy is largely written in C and is faster than anything you could write in Python). However, we want to limit the libraries that we use to ones that are common, well known and well maintained. So even if you find a module that does what you need, we probably still want to implement it ourselves. This way we limit our dependencies, have control over our implementaion and learn the code in-depth.
+We don't always have to write our own code. Using Python often libraries leads to more readable and faster code (NumPy is largely written in C and is faster than anything you could write in Python). However, we want to limit the libraries that we use to ones that are common, well-known, and well-maintained. So even if you find a module that does what you need, we probably still want to implement it ourselves. This way we limit our dependencies, have control over our implementation, and learn the code in-depth.
 
 These are some of the libraries we will be using a lot and standard import statements, use these for consistency.
 ```python
@@ -101,7 +101,7 @@ Don't use
 ```python
 from module import *
 ```
-which import everything from a module. This will crowd your namespace and can make the code harder to read, as its ambiguous where a function/variable/class came from. Instead import the specific things you need using.
+which imports everything from a module. This will crowd your namespace and can make the code harder to read, as it's ambiguous where a function/variable/class came from. Instead, import the specific things you need to use.
 ```python
 from module import my_func, myVar, MyClass
 ```
@@ -145,9 +145,9 @@ When writing large pieces of code, it can be useful to create your own modules o
 │   │   ├── validation_loss.png
 
 ```
-This way, the scripts, data and models are all kept seperate. This keeps things organized and is useful for keeping a git repository up to date. You probably don't want the data to be stored in the repository but the source code should be.
+This way, the scripts, data, and models are all kept separate. This keeps things organized and is useful for keeping a Git repository up to date. You probably don't want the data to be stored in the repository but the source code should be.
 
-Within the src directory, you can access classes, variables and functions from other files by using import statements. Say the *config.py* file has some variables that need to be accessed elsewhere, say for example the size of the resized images.
+Within the src directory, you can access classes, variables, and functions from other files by using import statements. Say the *config.py* file has some variables that need to be accessed elsewhere, say for example the size of the resized images.
 
 In config.py
 ```python
@@ -168,9 +168,9 @@ When you do this, its good practice to add a check to determine if the file is b
 ```python
 # Note both __name__ and '__main__' have double underscores before and after them
 if __name__ == '__main__': 
-    # this code is not run when imported
+    # This code is not run when imported
 ```
-When the file is run directly (either in the terminal or by clicking the play button in VS Code) this if statement will be true, but when importing it will be false. This way you can have your variable, class and function definitions outside the if statement (accessible by import) but code you only want to run sometimes (for example tests) inside.
+When the file is run directly (either in the terminal or by clicking the play button in VS Code) this if statement will be true, but when importing it will be false. This way you can have your variable, class, and function definitions outside the if statement (accessible by import) but code you only want to run sometimes (for example tests) inside.
 
 
 ## Using Language Features

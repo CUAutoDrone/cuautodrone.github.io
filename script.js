@@ -102,8 +102,6 @@ function displayMd(md) {
 
 function copyCodeBlock(codeBlock, copyIcon) {
     const codeText = codeBlock.innerText;
-    const tempTextarea = document.createElement('textarea');
-    tempTextarea.value = codeText;
     navigator.clipboard.writeText(codeText)
 
     copyIcon.textContent = 'done';

@@ -35,12 +35,12 @@ Images go in the *imgs* directory and can be accessed in markdowns by putting th
 ![CUAD Logo](imgs/logos/CUAD_Logo.png)
 
 
-The navigation bar is determined by navbar.json, a JSON file that must match the file structure in *src*. Running *makeJSON.py* will generate a JSON or raise an error if the filestructure is invalid. Since the file structure of *src* entirely determines how the navbar looks, it should be arranged as follows.
+The navigation bar is determined by navbar.json, a JSON file that must match the file structure in *src*. Running *makeJSON.py* will generate a JSON or raise an error if the file structure is invalid. Since the file structure of *src* entirely determines how the navbar looks, it should be arranged as follows.
 ```
 ├── src
 │   ├── category1                   <- This is a category, the bolded headers to groups of sections, it has no .md file.
 │   │   ├── section1
-│   │   │   ├── section1.md         <- This is the source for the section page and must to match the section name.
+│   │   │   ├── section1.md         <- This is the source for the section page and must match the section name.
 │   │   │   ├── subsection1.1.md
 │   │   │   ├── subsection1.2.md
 │   │   ├── section2.md             <- This is a .md file under a category, it will become a section without subsections.
@@ -48,29 +48,29 @@ The navigation bar is determined by navbar.json, a JSON file that must match the
 │   │   ├── section3.md
 │   │   ├── section4
 │   │   │   ├── section4.md
-│   │   │   ├── subsection4.1.md    <- These are the subsection source files,
-│   │   │   ├── subsection4.2.md    <- they will be viewed in the drop down menu for section4
+│   │   │   ├── subsection4.1.md    <- These are the subsection source files.
+│   │   │   ├── subsection4.2.md    <- They will be viewed in the drop-down menu for section4
 ```
-The categories are the bolded header and have no associated pages. Sections and subsections are displayed below and represent viewable pages. The order of the categories, sections and subsections is alphbetical. The best way to influence the order is by prepending the order as a number followed by a tilda **~**. See the **Name Changes** section for a full list of the changes that are made to folder/file names. To make a section with no subsections, add the markdown file directly in it's category directory (like section2 or section3). If a section has subsections, it must have a markdown file in its directory, the markdown file name must be the same (after changes) as the section folder name. I suggest adding **0~** before the section name.
+The categories are the bolded header and have no associated pages. Sections and subsections are displayed below and represent viewable pages. The order of the categories, sections, and subsections is alphabetical. The best way to influence the order is by prepending the order as a number followed by a tilda **~**. See the **Name Changes** section for a full list of the changes that are made to folder/file names. To make a section with no subsections, add the markdown file directly in its category directory (like section2 or section3). If a section has subsections, it must have a markdown file in its directory, the markdown file name must be the same (after changes) as the section folder name. I suggest adding **0~** before the section name.
 
 The reason for the annoying middle-man step of having a Python file generate the JSON is that (as far as I can tell) vanilla Javascript cannot read a local file structure. The only ways around this are
 - Have the user select the folder, which obviously doesn't work for generating the navbar automatically.
-- Use Node.js, which doesn't work with GitHub Pages since its not a static website.
-- Use manually entered HTML and update everytime a new page is added.
+- Use Node.js, which doesn't work with GitHub Pages since it's not a static website.
+- Use manually entered HTML and update every time a new page is added.
 - Use Python.
 If you know a way around this, please change it! I'd love to see a better solution.
 
 ### Name Changes
 - Everything before the first tilda **~** is discarded. This is so that numbers can be added before filenames to determine the order
-- There are also a series of replacements to characters or phrases in the file/folder names, additionaly replacements can be added by changing *REPLACEMENTS* in *makeJSON.py*
+- There are also a series of replacements for characters or phrases in the file/folder names, additional replacements can be added by changing *REPLACEMENTS* in *makeJSON.py*
     - '**_**' is replaced with a space ' '
-    - '**(star)**' is replaced with an asterik '**\***'
+    - '**(star)**' is replaced with an asterisk '**\***'
     - '**(slash)**' is replaced with a forward slash '**/**'
     - '**(colon)**' is replaced with a colon '**:**'
     - '**(question)**' is replaced with a question mark '**?**'
 
 # How to Edit
-If you are only making changes to the markdown files, for example fixing a typo or adding a missing detail, clone the repo, make the change and push your changes. Then, double check the website, GitHub Pages updates quickly so make sure your change works and didn't break anything. Also, make sure to make a descriptive commit message like:
+If you are only making changes to the markdown files, for example fixing a typo or adding a missing detail, clone the repo, make the change, and push your changes. Then, double-check the website, GitHub Pages updates quickly so make sure your change works and didn't break anything. Also, make sure to make a descriptive commit message like:
 ```
 Fixed Typo and Added detail
 
@@ -79,7 +79,7 @@ Fixed Typo and Added detail
 ```
 
 
-If you are adding a page or changing the layout, the above instructions still apply. Also, make sure you run **makeJSON.py** before pushing. It should print "**JSON Completed**" and nothing else! If there is an error, it means that the files were improperly layed out, you will have to fix it. You should also double check that the changes you have made created the desired effect before pushing the repo (you can use Live Server, a VS Code extension, to see it in your browser before you push).
+If you are adding a page or changing the layout, the above instructions still apply. Also, make sure you run **makeJSON.py** before pushing. It should print "**JSON Completed**" and nothing else! If there is an error, it means that the files were improperly laid out, and you will have to fix it. You should also double-check that the changes you have made created the desired effect before pushing the repo (you can use Live Server, a VS Code extension, to see it in your browser before you push).
 
 
 If you have any suggestions for ways to make the website better or easier to update, feel free to reach out!

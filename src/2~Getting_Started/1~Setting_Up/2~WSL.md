@@ -1,7 +1,7 @@
 # Installing Windows Subsystem for Linux
-If you want, you can install Windows Subsystem for Linux (WSL) as your development enviroment. Obviously, this is Windows only and it requrires Windows 10 or 11. WSL is esentially a seperate Linux OS that is partially integrated into your normal Windows install. The files you create in WSL are accessible from normal File Exporer and your normal files are accessible fom WSL.
+If you want, you can install Windows Subsystem for Linux (WSL) as your development environment. Obviously, this is Windows only and it requires Windows 10 or 11. WSL is essentially a separate Linux OS that is partially integrated into your normal Windows install. The files you create in WSL are accessible from the normal File Explorer and your normal files are accessible from WSL.
 
-The instructions for installing WSL can be found [here](https://learn.microsoft.com/en-us/windows/wsl/install), but I have included a pared down version with all the neccesary steps.
+The instructions for installing WSL can be found [here](https://learn.microsoft.com/en-us/windows/wsl/install), but I have included a down version with all the necessary steps.
 
 First, open PowerShell and type
 ```PowerShell
@@ -9,35 +9,35 @@ wsl --install
 ```
 Now you will need to enter a new username and password to be used by Linux, it doesn't have to be the same as your Windows username but it can be. Also, note that when you type your password (and when you type any password in Linux) nothing will show up but the typing is working, backspace is also still working.
 
-You likely have to restart your computer once its done installing but once you do, type "Ubuntu" into the search box and you should see it installed. Open Ubuntu and you will see the Linux terminal. This is how you will interact with WSL. You should see the Bash prompt, which looks like this:
+You likely have to restart your computer once it's done installing but once you do, type "Ubuntu" into the search box and you should see it installed. Open Ubuntu and you will see the Linux terminal. This is how you will interact with WSL. You should see the Bash prompt, which looks like this:
 ```bash
 user@machine:~$
 ```
-If you see something else, like ***root@...#***, something went wrong. Uninstall Ubuntu (using add or remove programs), restart your computer and try again.
+If you see something else, like ***root@...#***, something went wrong. Uninstall Ubuntu (using add or remove programs), restart your computer, and try again.
 
-One you have Ubuntu working, the first thing you should do is type
+Once you have Ubuntu working, the first thing you should do is type
 ```bash
 sudo apt update && sudo apt upgrade
 ```
-"sudo" means super user do, you can put it before another command to perform the action as a superuser, essentially equivalent to an admin in Windows. You should be careful of the commnds you run with sudo, which is why it will require you to enter your password. The next part of the command is "apt", the advanced packaging tool and it is the package manager on Linux. Essentially, it takes care of installing and updating other programs. So this command will make sure that all of your packages are updated and upgraded.
+"sudo" means super user do, you can put it before another command to perform the action as a superuser, essentially equivalent to an admin in Windows. You should be careful of the commands you run with sudo, which is why it will require you to enter your password. The next part of the command is "apt", the advanced packaging tool and it is the package manager on Linux. Essentially, it takes care of installing and updating other programs. So this command will make sure that all of your packages are updated and upgraded.
 
 
 ## Using Linux
 If you are completely unfamiliar with Linux, I'd recommend looking up a [Linux terminal cheatsheet](https://www.stationx.net/linux-command-line-cheat-sheet/) and familiarizing yourself with some of the commands, the most important ones I'll explain here.
 
-All commands and arguments are case sensitive. The general format of a Linux command is\
+All commands and arguments are case-sensitive. The general format of a Linux command is\
 [command] [arguments]\
-separated by spaces, sometimes there are no arguments or multiple arguments. You can press **Tab** and Linux will attempt to auto complete commands (if nothing happens, it doesn't know what you want).
+separated by spaces, sometimes there are no arguments or multiple arguments. You can press **Tab** and Linux will attempt to auto-complete commands (if nothing happens, it doesn't know what you want).
 
-- *Ctrl+C* this is how you end a process in Linux, basically if something is happening in the terminal and you want it to stop, type this. To copy paste stuff, use the right click window.
-- *ls* this lists all of the directories and files that are in your current folder (called the working directory). For examples if you were to call this command on a typical Windows user folder you would see Desktop, Documents, Downloads, Pictures, Videos, etc. You can also supply arguments to the *ls* command to limit its scope but that is not neccessary.
+- *Ctrl+C* this is how you end a process in Linux, basically if something is happening in the terminal and you want it to stop, type this. To copy and paste stuff, use the right-click window.
+- *ls* this lists all of the directories and files that are in your current folder (called the working directory). For example, if you were to call this command on a typical Windows user folder you would see Desktop, Documents, Downloads, Pictures, Videos, etc. You can also supply arguments to the *ls* command to limit its scope but that is not necessary.
 - *cd [directory]* change directory, this will change your working directory and allows you to move around the file system. Type cd followed by the name of the folder you want to move to. To move back in a folder type *cd ..* to up one directory or *cd ../..* to move up two, you can chain as many as you like. Finally, cd with no arguments will bring you back to the home directory */home*\
 Example to move into the Documents folder `cd Documents`
 - *mkdir [directory]* this is how you make a directory. This will make a folder in your current working directory after running this command if you *ls* then you should see the new folder show up.
 - *touch [filename]* this is how you create files. It will make the file in your current working directory. After running this command *ls* will show the new file. If the file already exists then the file will remain unchanged.\
 Example to make a file called **example.txt**, `touch example.txt`
-- *sudo apt install [program]* this how to install a program. It will require you to enter your password.
-- *code .* this will open VS Code in your current directory. This can be an easier way to make files and you can run programs but clicking the play button in the top right corner and the script will run in WSL.
+- *sudo apt install [program]* this is how to install a program. It will require you to enter your password.
+- *code .* this will open VS Code in your current directory. This can be an easier way to make files and you can run programs but clicking the play button in the top-right corner and the script will run in WSL.
 
 ## Getting Python Working
 Python should already be installed in WSL which you can check by running
@@ -48,7 +48,7 @@ which should return a version number, like **Python 3.10.6**, if you get **pytho
 ```bash
 sudo apt install python3
 ```
-you should update Python (whether it was installed originally or not) and install pip3, Python package manager which like apt but for Python libraries.
+you should update Python (whether it was installed originally or not) and install pip3, Python package manager which is like apt but for Python libraries.
 ```bash
 sudo apt upgrade python3
 sudo apt install python-pip3
