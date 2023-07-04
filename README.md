@@ -40,7 +40,7 @@ The navigation bar is determined by navbar.json, a JSON file that must match the
 ├── src
 │   ├── category1                   <- This is a category, the bolded headers to groups of sections, it has no .md file.
 │   │   ├── section1
-│   │   │   ├── section1.md         <- This is the source for the section page and must match the section name.
+│   │   │   ├── section1.md         <- This is the source for section1, it must match the section name.
 │   │   │   ├── subsection1.1.md
 │   │   │   ├── subsection1.2.md
 │   │   ├── section2.md             <- This is a .md file under a category, it will become a section without subsections.
@@ -49,7 +49,7 @@ The navigation bar is determined by navbar.json, a JSON file that must match the
 │   │   ├── section4
 │   │   │   ├── section4.md
 │   │   │   ├── subsection4.1.md    <- These are the subsection source files.
-│   │   │   ├── subsection4.2.md    <- They will be viewed in the drop-down menu for section4
+│   │   │   ├── subsection4.2.md    <- They will be viewed in the drop-down menu for section4.
 ```
 The categories are the bolded header and have no associated pages. Sections and subsections are displayed below and represent viewable pages. The order of the categories, sections, and subsections is alphabetical. The best way to influence the order is by prepending the order as a number followed by a tilda **~**. See the **Name Changes** section for a full list of the changes that are made to folder/file names. To make a section with no subsections, add the markdown file directly in its category directory (like section2 or section3). If a section has subsections, it must have a markdown file in its directory, the markdown file name must be the same (after changes) as the section folder name. I suggest adding **0~** before the section name.
 
@@ -63,23 +63,23 @@ If you know a way around this, please change it! I'd love to see a better soluti
 ### Name Changes
 - Everything before the first tilda **~** is discarded. This is so that numbers can be added before filenames to determine the order
 - There are also a series of replacements for characters or phrases in the file/folder names, additional replacements can be added by changing *REPLACEMENTS* in *makeJSON.py*
-    - '**_**' is replaced with a space ' '
+    - '**_** is replaced with a space ' '
     - '**(star)**' is replaced with an asterisk '**\***'
     - '**(slash)**' is replaced with a forward slash '**/**'
     - '**(colon)**' is replaced with a colon '**:**'
     - '**(question)**' is replaced with a question mark '**?**'
 
-# How to Edit
+## How to Edit
 If you are only making changes to the markdown files, for example fixing a typo or adding a missing detail, clone the repo, make the change, and push your changes. Then, double-check the website, GitHub Pages updates quickly so make sure your change works and didn't break anything. Also, make sure to make a descriptive commit message like:
 ```
-Fixed Typo and Added detail
+Fixed Typo and Added Detail
 
 - fixed typo in WSL.md, changed instally to install
-- added detail in Setting_UP.md, explained the options better
+- added detail in Setting_Up.md, explained the options better
 ```
 
 
 If you are adding a page or changing the layout, the above instructions still apply. Also, make sure you run **makeJSON.py** before pushing. It should print "**JSON Completed**" and nothing else! If there is an error, it means that the files were improperly laid out, and you will have to fix it. You should also double-check that the changes you have made created the desired effect before pushing the repo (you can use Live Server, a VS Code extension, to see it in your browser before you push).
 
 
-If you have any suggestions for ways to make the website better or easier to update, feel free to reach out!
+If you have any suggestions to make the website better or easier to update, feel free to reach out!

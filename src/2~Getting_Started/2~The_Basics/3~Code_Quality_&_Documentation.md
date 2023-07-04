@@ -12,12 +12,30 @@ The above uses are just guidelines, consistency is more important than adhering 
 
 In almost all cases, don't use single letters for variable names. I promise you that the extra time it takes to type out a real name will be less than the time it will take you (or someone else) to figure out what the hell 's' means in 3 months when looking at some old code. There are a few exceptions to this rule, when in a loop and counting iterations, it's perfectly ok (unless the iterations mean something specific) to use 'i', 'j', and 'k' (in that order). Also, when referencing coordinates it's fine to use 'x', 'y', and 'z'. Finally, for a purely mathematical function (i.e. sqrt, gcd) it might make sense to have single-letter parameters like 'x' or 'n' to a function (although you probably want to use NumPy anyways).
 
-Don't worry too much about long variable names, if you need a few words to describe the variable well, that's fine! Typing and reading are both faster than trying to parse confusing names. Also,  keep abbreviations limited to common ones like img for image or lst for list.
+Don't worry too much about long variable names, if you need a few words to describe the variable well, that's fine! Typing and reading are both faster than trying to parse confusing names. Also, keep abbreviations limited to common ones like img for image or lst for list.
+
+In general, you want your names to summarize the use and have a part of speech that matches its purpose. For example, functions should usually be an action phrase like "update_logging_params" or "set_waypoints". This makes it clear both what the function does (broadly) and that its a function. If the function was called "waypoints" it would be unclear its even a function. For classes, having a word like 'Manager' or 'Controller' can make be useful when naming a class that has broad responsibilities. Also, if something is particularly hard to name, it might mean its ill-defined and refactoring the code might help both in naming and general code quality. Remember, naming things is a skill and you will get better with practice.
+
+Finally, since Python unfortunatly doesn't have a pulbic/private distiction, we will use the convention that a single underscore preceding the name of a function or variable means that its private to the class.
+```python
+class MyClass:
+    # These are private, used only by the class internals.    
+    _private = 1 
+
+    def _private_function(self):
+        pass
+
+    # These are public, accessible by users of the class.
+    public = 2 
+
+    def public_function(self):
+        pass
+```
 
 ## Code Formatting
-We would like you to use a formatter. This will change the whitespace (and sometimes [other stuff](https://peps.python.org/pep-0008/)) in your code according to some consistent rules. It doesn't always make the code look better but it helps make code consistent to read even when written by multiple people.
+We would like you to use a formatter. This will change the whitespace (and sometimes [other stuff](https://peps.python.org/pep-0008/)) in your code according to some consistent rules. It doesn't always make the code look better but it helps make code consistent to read even when written by multiple people. 
 
-To set this up in VS Code, go to settings (Ctrl/Cmd+,) and search "format on save" and check the box. When you first save, there is going to be a popup in the bottom right corner that will ask you to install a formatter. Just click the blue option. Now, your code will be formatted whenever it is saved.
+To set this up in VS Code, go to the extensions tab on the left side (Ctrl/Cmd+Shift+X) and search "Black Formatter" the publisher should be Microsoft and have a verified chekcmark. Click install. Next, go to settings (Ctrl/Cmd+,) and search "format on save" and check the box. When you first save on a Python file, there is going to be a popup in the bottom right corner that will ask you if you want to use Black as the default formatter for Python, click Yes. Now, your code will be formatted whenever it is saved. If you are interested in the specifics of the Black formatter, look [here](https://black.readthedocs.io/en/stable/)
 
 ## Documentation and Function Specification
 To document a function, you need to write a specification. This is a description of what the function does that should fully specify the behavior of the function for any input. 
