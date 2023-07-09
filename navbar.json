@@ -6,13 +6,13 @@
             {
                 "type": "section",
                 "name": "Rules & Grading",
-                "path": "src\\1~Introduction\\1~Rules_&_Grading.md",
+                "path": "src/1~Introduction/1~Rules_&_Grading.md",
                 "children": []
             },
             {
                 "type": "section",
                 "name": "Member List",
-                "path": "src\\1~Introduction\\2~Member_List.md",
+                "path": "src/1~Introduction/2~Member_List.md",
                 "children": []
             }
         ]
@@ -24,44 +24,44 @@
             {
                 "type": "section",
                 "name": "Setting Up",
-                "path": "src\\2~Getting_Started\\1~Setting_Up\\0~Setting_Up.md",
+                "path": "src/2~Getting_Started/1~Setting_Up/0~Setting_Up.md",
                 "children": [
                     {
                         "type": "subsection",
+                        "name": "VS Code",
+                        "path": "src/2~Getting_Started/1~Setting_Up/1~VS_Code.md"
+                    },
+                    {
+                        "type": "subsection",
                         "name": "Anaconda",
-                        "path": "src\\2~Getting_Started\\1~Setting_Up\\1~Anaconda.md"
+                        "path": "src/2~Getting_Started/1~Setting_Up/2~Anaconda.md"
                     },
                     {
                         "type": "subsection",
                         "name": "WSL",
-                        "path": "src\\2~Getting_Started\\1~Setting_Up\\2~WSL.md"
-                    },
-                    {
-                        "type": "subsection",
-                        "name": "VS Code",
-                        "path": "src\\2~Getting_Started\\1~Setting_Up\\3~VS_Code.md"
+                        "path": "src/2~Getting_Started/1~Setting_Up/3~WSL.md"
                     }
                 ]
             },
             {
                 "type": "section",
                 "name": "The Basics",
-                "path": "src\\2~Getting_Started\\2~The_Basics\\0~The_Basics.md",
+                "path": "src/2~Getting_Started/2~The_Basics/0~The_Basics.md",
                 "children": [
                     {
                         "type": "subsection",
                         "name": "Debugging",
-                        "path": "src\\2~Getting_Started\\2~The_Basics\\1~Debugging.md"
+                        "path": "src/2~Getting_Started/2~The_Basics/1~Debugging.md"
                     },
                     {
                         "type": "subsection",
                         "name": "GitHub",
-                        "path": "src\\2~Getting_Started\\2~The_Basics\\2~GitHub.md"
+                        "path": "src/2~Getting_Started/2~The_Basics/2~GitHub.md"
                     },
                     {
                         "type": "subsection",
                         "name": "Code Quality & Documentation",
-                        "path": "src\\2~Getting_Started\\2~The_Basics\\3~Code_Quality_&_Documentation.md"
+                        "path": "src/2~Getting_Started/2~The_Basics/3~Code_Quality_&_Documentation.md"
                     }
                 ]
             }
@@ -74,13 +74,13 @@
             {
                 "type": "section",
                 "name": "MNIST Digit Classification",
-                "path": "src\\3~Projects\\1~MNIST_Digit_Classification\\0~MNIST_Digit_Classification.md",
+                "path": "src/3~Projects/1~MNIST_Digit_Classification/0~MNIST_Digit_Classification.md",
                 "children": []
             },
             {
                 "type": "section",
                 "name": "Dijiktras Pathfinding",
-                "path": "src\\3~Projects\\2~Dijiktras_Pathfinding\\0~Dijiktras_Pathfinding.md",
+                "path": "src/3~Projects/2~Dijiktras_Pathfinding/0~Dijiktras_Pathfinding.md",
                 "children": []
             }
         ]

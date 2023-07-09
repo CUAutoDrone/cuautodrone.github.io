@@ -12,12 +12,6 @@ Go [Here](https://www.anaconda.com/download/) to download the Anaconda installer
 
 Go [Here](https://docs.anaconda.com/free/anaconda/install/index.html) for instructions on the installation process for your operating system
 
-## Install VSCode
-
-VSCode is an extremely popular IDE that works well with a variety of programming languages. We can use Anaconda with VSCode as well.
-
-Install VSCode [Here](https://code.visualstudio.com/docs/setup/setup-overview)
-
 ## Conda Commands
 
 The Anaconda command prompt can be launched from your Anaconda Navigator
@@ -40,12 +34,12 @@ To create a new conda environment using VSCode:
 conda activate <filepath-to-your-file-or-folder>\.conda
 ```
 
-If the conda environment created through PyCharm did not work, you can also execute the following command in the Anaconda Prompt
+If the conda environment created through VSCode did not work, you can also execute the following command in the Anaconda Prompt
 ```shell
 conda create -name <your-environment-name>
 ```
 
-Many times when installing packages/libraries in your PyCharm projects, you will do so through the terminal.  When running your code or installing libraries, make sure that your environment name appears in parentheses next to the working directory.
+Many times when installing packages/libraries in your VSCode projects, you will do so through the terminal.  When running your code or installing libraries, make sure that your environment name appears in parentheses next to the working directory.
 
 If this is not the case, run the following command to activate your environment
 ```shell
@@ -61,7 +55,6 @@ If something goes seriously wrong, you can remove an environment and all of its 
 ```shell
 conda remove -n <your-environment-name> --all
 ```
-
 
 
 
