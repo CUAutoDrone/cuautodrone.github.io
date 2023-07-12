@@ -15,7 +15,7 @@ When the language is omitted, so is the copy icon. This is primarily to allow th
 ```
 This is a code block with no language specified.
 ```
-Finally, to display psudocode, you can specify the language as *algorithm* and then use [psudocode.js syntax](https://github.com/SaswatPadhi/pseudocode.js#grammar) to create psudocode, it's similar to some LaTeX algorithm packages. Additionally, inside these psudocode blocks you can use math notation available in LaTeX when enclosed like `$...$` or `\(...\)` heres an example of Quicksort, from psudocode.js
+Finally, to display psudocode, you can specify the language as *algorithm* and then use [psudocode.js syntax](https://github.com/SaswatPadhi/pseudocode.js#grammar) to create psudocode, it's similar to some LaTeX algorithm packages. Additionally, inside these psudocode blocks you can use math notation available in KaTeX when enclosed like `$...$` or `\(...\)` heres an example of Quicksort, from psudocode.js
 ```algorithm
 \begin{algorithm}
 \caption{Quicksort}
@@ -93,7 +93,7 @@ If you know a way around this, please change it! I'd love to see a better soluti
 ### Name Changes
 - Everything before the first tilda **~** is discarded. This is so that numbers can be added before filenames to determine the order
 - There are also a series of replacements for characters or phrases in the file/folder names, additional replacements can be added by changing *REPLACEMENTS* in *makeJSON.py*
-    - '**_** is replaced with a space ' '
+    - '**_**' is replaced with a space ' '
     - '**(star)**' is replaced with an asterisk '**\***'
     - '**(slash)**' is replaced with a forward slash '**/**'
     - '**(colon)**' is replaced with a colon '**:**'

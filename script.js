@@ -106,7 +106,7 @@ function displayMd(md) {
             });
             var algorithms = document.querySelectorAll('.ps-algorithm.with-caption > .ps-line:first-child > .ps-keyword');
             algorithms.forEach(function (title) {
-                title.textContent = 'Algorithm ';
+                title.remove()
             });
         });
 }

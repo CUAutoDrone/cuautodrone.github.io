@@ -28,34 +28,9 @@ body {
     padding-right: 5vw
 }
 
-
 .markdown>p>img {
     max-width: min(70vw, 1000px);
     display: inline-block;
-}
-
-.ps-line {
-    line-height: .5;
-}
-
-.ps-root {
-    line-height: 0 !important;
-}
-
-.ps-root .ps-line {
-    line-height: 0.3 !important;
-}
-
-.ps-root .ps-algorithm.with-caption>.ps-line:first-child {
-    border-bottom: 1px solid var(--off-white) !important;
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
-}
-
-.ps-root .ps-algorithm {
-    border-top: 2px solid var(--off-white) !important;
-    padding-bottom: 10px !important;
-    border-bottom: 1px solid var(--off-white) !important;
 }
 
 pre {
@@ -83,6 +58,35 @@ li>ul>li>ul>li>pre {
     width: calc(min(70vw, 1000px) - 120px);
 }
 
+
+.ps-line {
+    line-height: .5;
+}
+
+.ps-root {
+    line-height: 0 !important;
+}
+
+.ps-root .ps-line {
+    line-height: 0.3 !important;
+}
+
+.ps-root .ps-algorithm.with-caption>.ps-line:first-child {
+    border-bottom: 1px solid var(--off-white) !important;
+    padding-top: 7px !important;
+    padding-bottom: 10px !important;
+}
+
+.ps-algorithm.with-caption>.ps-line:first-child {
+    font-weight: 450;
+    font-size: larger;
+}
+
+.ps-root .ps-algorithm {
+    border-top: 2px solid var(--off-white) !important;
+    padding-bottom: 10px !important;
+    border-bottom: 1px solid var(--off-white) !important;
+}
 
 a {
     color: var(--hyperlink);
