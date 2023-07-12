@@ -90,7 +90,7 @@ function displayMd(md) {
             const codeBlocks = markdownContainer.querySelectorAll('pre > code');
             codeBlocks.forEach((codeBlock) => {
                 if (!codeBlock.getAttribute('class')) return
-                if (codeBlock.getAttribute('class') == " language-algorithm") {
+                if (codeBlock.getAttribute('class') == "language-{algorithm} language-none") {
                     pseudocode.renderElement(codeBlock, { lineNumber: true, lineNumberPunc: ' ' });
                     return
                 }
@@ -105,8 +105,8 @@ function displayMd(md) {
                 codeContainer.appendChild(copyIcon);
             });
             var algorithms = document.querySelectorAll('.ps-algorithm.with-caption > .ps-line:first-child > .ps-keyword');
-            algorithms.forEach(function (title) {
-                title.remove()
+            algorithms.forEach(function (algorithm) {
+                algorithm.remove()
             });
         });
 }

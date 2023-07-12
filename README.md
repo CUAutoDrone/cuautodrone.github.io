@@ -4,7 +4,7 @@ This is a website to display the onboarding materials and other documents for th
 ## How it works
 As I've said, the core of this website is a markdown file viewer. If you want to add or edit pages, I suggest looking at a [markdown cheat sheet](https://www.markdownguide.org/cheat-sheet/). Just like typical markdown, it supports KaTeX inline and block math notation using `$...$` and `$$...$$`, like $\frac{1}{2}$ and 
 $$\sum_{n=1}^\infty {\frac{1}{n^2} = \frac{\pi^2}{6}}$$
-The only differences to a typical markdown are code blocks. When you provide a language at the top of a code block, this site will add a copy icon that users can click to copy the code block.
+The only significant difference from typical markdown is the code blocks. When you provide a language at the top of a code block, this site will add a copy icon that users can click to copy the code block.
 ```Python
 # This is some example Python code that supports syntax highlighting and quick copying
 def example_function(args):
@@ -15,8 +15,8 @@ When the language is omitted, so is the copy icon. This is primarily to allow th
 ```
 This is a code block with no language specified.
 ```
-Finally, to display psudocode, you can specify the language as *algorithm* and then use [psudocode.js syntax](https://github.com/SaswatPadhi/pseudocode.js#grammar) to create psudocode, it's similar to some LaTeX algorithm packages. Additionally, inside these psudocode blocks you can use math notation available in KaTeX when enclosed like `$...$` or `\(...\)` heres an example of Quicksort, from psudocode.js
-```algorithm
+Finally, to display psudocode, you can specify the language as *{algorithm}* and then use [psudocode.js syntax](https://github.com/SaswatPadhi/pseudocode.js#grammar) to create psudocode, it's similar to some LaTeX algorithm packages. Additionally, inside these psudocode blocks you can use math notation available in KaTeX by putting them in `$...$` or `\(...\)` heres an example of Quicksort, from psudocode.js
+```{algorithm}
 \begin{algorithm}
 \caption{Quicksort}
 \begin{algorithmic}
@@ -42,6 +42,35 @@ Finally, to display psudocode, you can specify the language as *algorithm* and t
 \end{algorithmic}
 \end{algorithm}
 ```
+and the markdown source
+```markdown
+```{algorithm}
+\caption{Quicksort}
+\begin{algorithmic}
+\PROCEDURE{Quicksort}{$A, p, r$}
+    \IF{$p < r$} 
+        \STATE $q = $ \CALL{Partition}{$A, p, r$}
+        \STATE \CALL{Quicksort}{$A, p, q - 1$}
+        \STATE \CALL{Quicksort}{$A, q + 1, r$}
+    \ENDIF
+\ENDPROCEDURE
+\PROCEDURE{Partition}{$A, p, r$}
+    \STATE $x = A[r]$
+    \STATE $i = p - 1$
+    \FOR{$j = p$ \TO $r - 1$}
+        \IF{$A[j] < x$}
+            \STATE $i = i + 1$
+            \STATE exchange
+            $A[i]$ with $A[j]$
+        \ENDIF
+        \STATE exchange $A[i]$ with $A[r]$
+    \ENDFOR
+\ENDPROCEDURE
+\end{algorithmic}
+\end{algorithm}
+```‎
+```
+
 
 ### The Repo
 The layout of this repo is roughly like this
