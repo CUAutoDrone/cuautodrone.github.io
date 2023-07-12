@@ -2,7 +2,7 @@
 This is a website to display the onboarding materials and other documents for the Cornell University Autonomous Drone Project Team. It is inspired by the [CS 3110 Online Textbook](https://cs3110.github.io/textbook/cover.html). It is essentially a file viewer for [markdown](https://www.markdownguide.org/getting-started/) (.md) files using [Marked](https://marked.js.org/), it uses [Prism](https://prismjs.com/) to do code syntax highlighting, [psudocode.js](https://github.com/SaswatPadhi/pseudocode.js) to render psudocode and [GitHub Pages](https://pages.github.com/) for hosting.
 
 ## How it works
-As I've said, the core of this website is a markdown file viewer. If you want to add or edit pages, I suggest looking at a [markdown cheat sheet](https://www.markdownguide.org/cheat-sheet/). Just like typical markdown, it supports KaTeX inline and block math notation using `$...$` and `$$...$$`, like $ \frac{1}{2}$ and 
+As I've said, the core of this website is a markdown file viewer. If you want to add or edit pages, I suggest looking at a [markdown cheat sheet](https://www.markdownguide.org/cheat-sheet/). Just like typical markdown, it supports KaTeX inline and block math notation using `$...$` and `$$...$$`, like $\frac{1}{2}$ and 
 $$\sum_{n=1}^\infty {\frac{1}{n^2} = \frac{\pi^2}{6}}$$
 The only differences to a typical markdown are code blocks. When you provide a language at the top of a code block, this site will add a copy icon that users can click to copy the code block.
 ```Python

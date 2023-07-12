@@ -104,6 +104,10 @@ function displayMd(md) {
                 });
                 codeContainer.appendChild(copyIcon);
             });
+            var algorithms = document.querySelectorAll('.ps-algorithm.with-caption > .ps-line:first-child > .ps-keyword');
+            algorithms.forEach(function (title) {
+                title.textContent = 'Algorithm ';
+            });
         });
 }
 
