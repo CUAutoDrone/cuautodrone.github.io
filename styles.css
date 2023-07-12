@@ -34,6 +34,30 @@ body {
     display: inline-block;
 }
 
+.ps-line {
+    line-height: .5;
+}
+
+.ps-root {
+    line-height: 0 !important;
+}
+
+.ps-root .ps-line {
+    line-height: 0.3 !important;
+}
+
+.ps-root .ps-algorithm.with-caption>.ps-line:first-child {
+    border-bottom: 1px solid var(--off-white) !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+.ps-root .ps-algorithm {
+    border-top: 2px solid var(--off-white) !important;
+    padding-bottom: 10px !important;
+    border-bottom: 1px solid var(--off-white) !important;
+}
+
 pre {
     display: inline-block;
     overflow-x: auto;

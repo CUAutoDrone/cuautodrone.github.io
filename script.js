@@ -1,4 +1,8 @@
 const slide_speed = 200
+const options = {
+    throwOnError: false
+};
+marked.use(markedKatex(options));
 displayMd('README.md')
 
 fetch('navbar.json')
@@ -63,7 +67,6 @@ function makeSection(json) {
 }
 
 function makeSubsection(json) {
-    console.log(json);
     if (json.type != 'subsection') return
     var subsection = document.createElement('li');
     subsection.setAttribute('class', 'subsection');
@@ -87,6 +90,10 @@ function displayMd(md) {
             const codeBlocks = markdownContainer.querySelectorAll('pre > code');
             codeBlocks.forEach((codeBlock) => {
                 if (!codeBlock.getAttribute('class')) return
+                if (codeBlock.getAttribute('class') == " language-algorithm") {
+                    pseudocode.renderElement(codeBlock, { lineNumber: true, lineNumberPunc: ' ' });
+                    return
+                }
                 const copyIcon = document.createElement('span');
                 copyIcon.className = 'copy-icon material-icons';
                 copyIcon.textContent = 'content_copy';

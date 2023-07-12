@@ -1,18 +1,48 @@
 # CUAD CS Subteam Materials
-This is a website to display the onboarding materials and other documents for the Cornell University Autonomous Drone Project Team. It is inspired by the [CS 3110 Online Textbook](https://cs3110.github.io/textbook/cover.html). It is essentially a file viewer for [markdown](https://www.markdownguide.org/getting-started/) (.md) files, and uses [Prism](https://prismjs.com/) to do code syntax highlighting and [GitHub Pages](https://pages.github.com/) for hosting.
+This is a website to display the onboarding materials and other documents for the Cornell University Autonomous Drone Project Team. It is inspired by the [CS 3110 Online Textbook](https://cs3110.github.io/textbook/cover.html). It is essentially a file viewer for [markdown](https://www.markdownguide.org/getting-started/) (.md) files using [Marked](https://marked.js.org/), it uses [Prism](https://prismjs.com/) to do code syntax highlighting, [psudocode.js](https://github.com/SaswatPadhi/pseudocode.js) to render psudocode and [GitHub Pages](https://pages.github.com/) for hosting.
 
 ## How it works
-As I've said, the core of this website is a markdown file viewer. If you want to add or edit pages, I suggest looking at a [markdown cheat sheet](https://www.markdownguide.org/cheat-sheet/), the only differences from a typical markdown have to do with code blocks. When you provide a language at the top of a code block, this site will add a copy icon that users can click to copy the code block.
+As I've said, the core of this website is a markdown file viewer. If you want to add or edit pages, I suggest looking at a [markdown cheat sheet](https://www.markdownguide.org/cheat-sheet/). Just like typical markdown, it supports KaTeX inline and block math notation using `$...$` and `$$...$$`, like $ \frac{1}{2}$ and 
+$$\sum_{n=1}^\infty {\frac{1}{n^2} = \frac{\pi^2}{6}}$$
+The only differences to a typical markdown are code blocks. When you provide a language at the top of a code block, this site will add a copy icon that users can click to copy the code block.
 ```Python
 # This is some example Python code that supports syntax highlighting and quick copying
 def example_function(args):
     print("hello world!")
-    return
+    return 5
 ```
 When the language is omitted, so is the copy icon. This is primarily to allow the display of file structures.
 ```
 This is a code block with no language specified.
 ```
+Finally, to display psudocode, you can specify the language as *algorithm* and then use [psudocode.js syntax](https://github.com/SaswatPadhi/pseudocode.js#grammar) to create psudocode, it's similar to some LaTeX algorithm packages. Additionally, inside these psudocode blocks you can use math notation available in LaTeX when enclosed like `$...$` or `\(...\)` heres an example of Quicksort, from psudocode.js
+```algorithm
+\begin{algorithm}
+\caption{Quicksort}
+\begin{algorithmic}
+\PROCEDURE{Quicksort}{$A, p, r$}
+    \IF{$p < r$} 
+        \STATE $q = $ \CALL{Partition}{$A, p, r$}
+        \STATE \CALL{Quicksort}{$A, p, q - 1$}
+        \STATE \CALL{Quicksort}{$A, q + 1, r$}
+    \ENDIF
+\ENDPROCEDURE
+\PROCEDURE{Partition}{$A, p, r$}
+    \STATE $x = A[r]$
+    \STATE $i = p - 1$
+    \FOR{$j = p$ \TO $r - 1$}
+        \IF{$A[j] < x$}
+            \STATE $i = i + 1$
+            \STATE exchange
+            $A[i]$ with $A[j]$
+        \ENDIF
+        \STATE exchange $A[i]$ with $A[r]$
+    \ENDFOR
+\ENDPROCEDURE
+\end{algorithmic}
+\end{algorithm}
+```
+
 ### The Repo
 The layout of this repo is roughly like this
 ```
@@ -74,8 +104,8 @@ If you are only making changes to the markdown files, for example fixing a typo 
 ```
 Fixed Typo and Added Detail
 
-- fixed typo in WSL.md, changed instally to install
-- added detail in Setting_Up.md, explained the options better
+- Fixed typo in WSL.md, changed instally to install
+- Added detail in Setting_Up.md, explained the options better
 ```
 
 
