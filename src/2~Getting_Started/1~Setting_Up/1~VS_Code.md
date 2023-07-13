@@ -30,7 +30,11 @@ Below the tabs are what VS Code calls 'breadcrumbs' which show the path of whate
 
 ![VS Code Breadcrumbs](imgs/vscode/VSC_Breadcrumbs.png)
 
-On the top right of the editor, there are a few context-dependent buttons. Depending on the type of file you have open (among other things) there will be a few useful options, you can hover over them to see what they do. For example, when you have a Python file open, there will be a Play button that you can click to run the script. Create a Python script that prints something out and run it using the Play button. You will notice that a new panel opens at the bottom of your editor, this includes the terminal and a few other tabs. This built-in terminal is specific to your operating system and will already be in the same directory as VS Code. You should notice it contains the output of your program. You can open a new terminal by clicking the plus icon on the top right of the panel (Ctrl/Cmd+Shift+\`). 
+On the top right of the editor, there are a few context-dependent buttons. Depending on the type of file you have open (among other things) there will be a few useful options, you can hover over them to see what they do. For example, when you have a Python file open, there will be a Play button that you can click to run the script. Create a Python script that prints something out and run it using the Play button. You will notice that a new panel opens at the bottom of your editor, this includes the terminal and a few other tabs.
+
+![VS Code Run Python Script](imgs/vscode/VSC_Run.png)
+
+This built-in terminal is specific to your operating system and will already be in the same directory as VS Code. You should notice it contains the output of your program. You can open a new terminal by clicking the plus icon on the top right of the panel (Ctrl/Cmd+Shift+\`). 
 
 ![VS Code New Terminal](imgs/vscode/VSC_New_Terminal.png)
 
