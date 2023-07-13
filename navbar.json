@@ -75,13 +75,70 @@
                 "type": "section",
                 "name": "MNIST Digit Classification",
                 "path": "src/3~Projects/1~MNIST_Digit_Classification/0~MNIST_Digit_Classification.md",
-                "children": []
+                "children": [
+                    {
+                        "type": "subsection",
+                        "name": "Getting Started with Modules",
+                        "path": "src/3~Projects/1~MNIST_Digit_Classification/1~Getting_Started_with_Modules.md"
+                    },
+                    {
+                        "type": "subsection",
+                        "name": "What is ML?",
+                        "path": "src/3~Projects/1~MNIST_Digit_Classification/2~What_is_ML(question).md"
+                    },
+                    {
+                        "type": "subsection",
+                        "name": "Preprocessing",
+                        "path": "src/3~Projects/1~MNIST_Digit_Classification/3~Preprocessing.md"
+                    },
+                    {
+                        "type": "subsection",
+                        "name": "Neural Networks",
+                        "path": "src/3~Projects/1~MNIST_Digit_Classification/4~Neural_Networks.md"
+                    },
+                    {
+                        "type": "subsection",
+                        "name": "PyTorch",
+                        "path": "src/3~Projects/1~MNIST_Digit_Classification/5~PyTorch.md"
+                    }
+                ]
             },
             {
                 "type": "section",
                 "name": "Dijiktras Pathfinding",
                 "path": "src/3~Projects/2~Dijiktras_Pathfinding/0~Dijiktras_Pathfinding.md",
-                "children": []
+                "children": [
+                    {
+                        "type": "subsection",
+                        "name": "Pathfinding",
+                        "path": "src/3~Projects/2~Dijiktras_Pathfinding/1~Pathfinding.md"
+                    },
+                    {
+                        "type": "subsection",
+                        "name": "Graphs",
+                        "path": "src/3~Projects/2~Dijiktras_Pathfinding/2~Graphs.md"
+                    },
+                    {
+                        "type": "subsection",
+                        "name": "Priority Queues",
+                        "path": "src/3~Projects/2~Dijiktras_Pathfinding/3~Priority_Queues.md"
+                    },
+                    {
+                        "type": "subsection",
+                        "name": "Pseudocode",
+                        "path": "src/3~Projects/2~Dijiktras_Pathfinding/4~Pseudocode.md"
+                    },
+                    {
+                        "type": "subsection",
+                        "name": "The Project",
+                        "path": "src/3~Projects/2~Dijiktras_Pathfinding/5~The_Project.md"
+                    },
+                    {
+                        "type": "subsection",
+                        "name": "A*",
+                        "path": "src/3~Projects/2~Dijiktras_Pathfinding/6~A(star).md"
+                    }
+                ]
             }
         ]
     }

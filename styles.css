@@ -184,7 +184,7 @@ a:hover {
 
 .section-name {
     padding-top: 5px;
-    max-width: 150px;
+    max-width: 140px;
     overflow-wrap: break-word;
     font-size: large;
     display: inline-block;
@@ -201,7 +201,7 @@ a:hover {
     float: right;
     padding-right: 10px;
     padding-top: 5px;
-    transform: translateY(7px);
+    transform: translateY(2px);
     user-select: none;
     color: var(--pure-white);
     border: none;
