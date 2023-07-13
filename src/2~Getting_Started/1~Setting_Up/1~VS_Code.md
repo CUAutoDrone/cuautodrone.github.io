@@ -14,7 +14,7 @@ The first icon is the **Explorer** (which you can get to with Ctrl/Cmd+Shift+X),
 VS Code is designed to work in a directory, so you need to tell it where it should be working. Typically, it's easier to open Code where you want to work rather than telling it afterward, how you do this depends a bit on your OS. 
 - In Linux (and WSL) you can use the command 'code .' which opens Code in the current working directory.
 - In Windows, you can rick-click in/on a folder then, in Windows 10, there will be an option to 'Open with Code', in Windows 11, you have to click 'Show more options' first.
-- In MacOS, you need to open the Command Palette (Cmd+Shift+P) in VS Code and type 'shell command' to find **Shell Command: Install 'code' command in PATH**, select it then restart the terminal and you can use 'code .' just like in Linux.
+- In MacOS, you need to open the Command Palette (Cmd+Shift+P) in VS Code and type 'shell command' to find **Shell Command: Install 'code' command in PATH**, select it, then restart the terminal and you can use 'code .' just like in Linux.
 
 Before continuing, open VS Code in the directory you want to work on (you might want to make one just for CUAD things). Now, in Explorer, you should see the folder name at the top in bold with the contents listed below.
 
@@ -34,7 +34,7 @@ On the top right of the editor, there are a few context-dependent buttons. Depen
 
 ![VS Code Run Python Script](imgs/vscode/VSC_Run.png)
 
-This built-in terminal is specific to your operating system and will already be in the same directory as VS Code. You should notice it contains the output of your program. You can open a new terminal by clicking the plus icon on the top right of the panel (Ctrl/Cmd+Shift+\`). 
+This built-in terminal is specific to your operating system and will already be in the same directory as VS Code. You should notice it contains the output of your program. You can open a new terminal by clicking the plus icon on the top right of the panel (Ctrl/Cmd+Shift+\`  this is the backtick, right below the escape key). 
 
 ![VS Code New Terminal](imgs/vscode/VSC_New_Terminal.png)
 
@@ -42,7 +42,7 @@ You can have as many terminals open as you like and see a list of all open termi
 
 ![VS Code New Terminal](imgs/vscode/VSC_Trash.png)
 
-Finally, you can fullscreen and unfullscreen the terminal with the up/down arrow icon. To open/close the bottom panel, use Ctrl/Cmd+\` (this is the backtick, right below the escape key).
+Finally, you can fullscreen and unfullscreen the terminal with the up/down arrow icon. To open/close the bottom panel, use Ctrl/Cmd+\` .
 
 The next icon on the sidebar is **Search** (Ctrl/Cmd+Shift+F), this allows you to search for things in multiple files, you can find and replace as well as specify the files to include or exclude.
 
@@ -62,21 +62,21 @@ Technically, there are sometimes more icons, but it's context-dependent. For Pyt
 
 
 ## Some Useful Keyboard Shortcuts
-- Ctrl/Cmd+/ Comments/uncomments all highlighted lines, works for any language
-- Ctrl/Cmd+F5 Run without debugging, this one is worth changing to something else, since you'll be doing it a lot
-- Tab Adds an indent to all highlighted lines
-- Shift+Tab Removes an indent from all highlighted lines
-- Alt/Opt+Click Creates additional cursors wherever you click, then when you type or paste, it will appear at all cursor points
-- Alt/Opt+↑/↓ Move line(s) up or down
-- Ctrl/Cmd+Y Redo, for when you're overzealous with the undos
-- Ctrl/Cmd+D Select next instance, this highlights the next instance of whatever word your cursor is on
-- Alt/Opt+Shift+↑/↓ Creates cursor above/below
-- Ctrl/Cmd+L Selects the whole line
-- Alt/Opt+Shift+I Puts cursors on the end of all selected lines
-- Ctrl/Cmd+, Opens settings
-- Ctrl/Cmd+Shift+P Opens the Command Palette, where you can search for commands
+- *Ctrl/Cmd+/* &nbsp;Comments/uncomments all highlighted lines, works for any language
+- *Ctrl/Cmd+F5* &nbsp;Run without debugging, this one is worth changing to something else, since you'll be doing it a lot
+- *Tab* &nbsp;Adds an indent to all highlighted lines
+- *Shift+Tab* &nbsp;Removes an indent from all highlighted lines
+- *Alt/Opt+Click* &nbsp;Creates additional cursors wherever you click, then when you type or paste, it will appear at all cursor points
+- *Alt/Opt+↑/↓* &nbsp;Move line(s) up or down
+- *Ctrl/Cmd+Y* &nbsp;Redo, for when you're overzealous with the undos
+- *Ctrl/Cmd+D* &nbsp;Select next instance, this highlights the next instance of whatever word your cursor is on
+- *Alt/Opt+Shift+↑/↓* &nbsp;Creates cursor above/below
+- *Ctrl/Cmd+L* &nbsp;Selects the whole line
+- *Alt/Opt+Shift+I* &nbsp;Puts cursors on the end of all selected lines
+- *Ctrl/Cmd+,* &nbsp;Opens settings
+- *Ctrl/Cmd+Shift+P* &nbsp;Opens the Command Palette, where you can search for commands
 
 Also, while in the editor, you can right-click on a variable to bring up a menu with some very helpful options. The most useful are
-- F12 Go to definition, this will bring your screen to where this variable is defined, it will adhere to scope and open the necessary file in a new tab if needed.
-- Shift+F12 Go to references, this will show all the places this variable is used in your code.
-- F2 Rename Symbol, this will rename the variable (again respecting scope) to something new, use this instead of a find and replace as it's almost impossible to make a mistake.
+- F12 &nbsp;Go to definition, this will bring your screen to where this variable is defined, it will adhere to scope and open the necessary file in a new tab if needed.
+- Shift+F12 &nbsp;Go to references, this will show all the places this variable is used in your code.
+- F2 &nbsp;Rename Symbol, this will rename the variable (again respecting scope) to something new, use this instead of a find and replace as it's almost impossible to make a mistake.

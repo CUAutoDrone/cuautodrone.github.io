@@ -78,66 +78,66 @@ ___
 ```shell
 git clone <repository>
 ```
-- This command gets the repository that is stored at the url you provide and puts it in your current working directory.  This shouldn’t need to be done multiple times for a repository.
+This command gets the repository that is stored at the url you provide and puts it in your current working directory.  This shouldn’t need to be done multiple times for a repository.
 ___
 ```shell
 git pull
 ```
-- This command will sync the repository on your computer with the one in GitHub.  Any changes on the branch you are on will be pulled to your computer!
-___
-```shell
-git push
-```
-- This command is kind of like the opposite of pull.  If you have any committed changes on the local branch, you can use the push command to publish them to GitHub
-___
-```shell
-git branch <NewBranch> <BaseBranch>
-```
-- This command will create a new branch named NewBranch of the BaseBranch of the repository, that you can make changes to.  This branch will initially be a “copy” of the original branch but as you make changes, the original branch will not reflect them (until you merge)
-___
-```shell
-git status
-```
-- This command is a great way to view which files in your repository have changed since the last commit.
+This command will sync the repository on your computer with the one in GitHub.  Any changes on the branch you are on will be pulled to your computer!
 ___
 ```shell
 git add <file>
 ```
-- This command is like the setup for a commit.  It will stage the specified file for commit — you usually stage files that you have made changes to, and want to push to GitHub. If you want to stage all the changed files, put a . instead of a filename
+This command "stages" your files essentially getting them ready to be moved to GitHub.  It will stage the specified file for commit — you usually stage files that you have made changes to, and want to push to GitHub. If you want to stage all the changed files, put a . instead of a filename.
 ___
 ```shell
 git commit
 ```
-- This command will take your staged changes (from running git add) and confirm them on the branch you are working on.  See the section on commit messages for guidelines on how to make a descriptive commit!
+This command will take your staged changes (from running git add) and confirm them on the branch you are working on.  See the section on commit messages for guidelines on how to make a descriptive commit!
+___
+```shell
+git push
+```
+This command is kind of like the opposite of pull.  If you have any committed changes on the local branch, you can use the push command to publish them to GitHub.
+___
+```shell
+git branch <NewBranch> <BaseBranch>
+```
+This command will create a new branch named NewBranch of the BaseBranch of the repository, that you can make changes to.  This branch will initially be a “copy” of the original branch but as you make changes, the original branch will not reflect them (until you merge).
+___
+```shell
+git status
+```
+This command is a great way to view which files in your repository have changed since the last commit.
 ___
 ```shell
 git checkout <BranchName>
 ```
-- Sometimes you might want to change to a different branch to work on it or conduct testing.  This command will swap you to the branch specified by BranchName.
+Sometimes you might want to change to a different branch to work on it or conduct testing.  This command will swap you to the branch specified by BranchName.
 ___
 ```shell
 git checkout -b <BranchName>
 ```
-- This is almost the same as the previous checkout command, but should be used when you want to make a new branch AND swap to it.
+This is almost the same as the previous checkout command, but should be used when you want to make a new branch AND swap to it.
 ___
 ```shell
 git stash
 ```
-- When trying to change to a new branch or pull from GitHub, you can’t have any uncommitted changes.  If you are not ready to commit, you can use this command to temporarily remove any changes you have made.  These changes are saved!  To restore them, use …
+When trying to change to a new branch or pull from GitHub, you can’t have any uncommitted changes.  If you are not ready to commit, you can use this command to temporarily remove any changes you have made.  These changes are saved!
 ___
 ```shell
 git stash pop
 ```
-- This command restores any stashed changes on your repository
+This command restores any stashed changes on your repository.
 ___
 
 &nbsp;
 
 ## Commit Messages
 
-Whenever you make a commit, git will prompt you for a commit message
+Whenever you make a commit, git will prompt you for a commit message. It will open a text editor (by default Vim on both MacOS and Windows), once you type your message use Ctrl/Cmd+O to confim your message and Ctrl/Cmd+X to exit Vim and return to the terminal.
 
-This message is very important, as it helps you (and others) keep track of what was accomplished in each commit over the course of your project
+Your commit message is very important, as it helps you (and others) keep track of what was accomplished in each commit over the course of your project.
 
 A good commit message usually includes:
 - A short but descriptive title followed by a blank line
@@ -154,3 +154,8 @@ Added unit tests for XYZ.a and XYZ.b
 
 Issue 123
 
+___
+If your commit is very simple, you can also commit with a one line message, only use this for commits like "Initial commit".
+```shell
+git commit -m "Your message"
+```

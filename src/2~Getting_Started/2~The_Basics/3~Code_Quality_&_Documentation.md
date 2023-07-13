@@ -14,7 +14,7 @@ In almost all cases, don't use single letters for variable names. I promise you 
 
 Don't worry too much about long variable names, if you need a few words to describe the variable well, that's fine! Typing and reading are both faster than trying to parse confusing names. Also, keep abbreviations limited to common ones like img for image or lst for list.
 
-In general, you want your names to summarize the use and have a part of speech that matches its purpose. For example, functions should usually be an action phrase like "update_logging_params" or "set_waypoints". This makes it clear both what the function does (broadly) and that its a function. If the function was called "waypoints" it would be unclear its even a function. For classes, having a word like 'Manager' or 'Controller' can make be useful when naming a class that has broad responsibilities. Also, if something is particularly hard to name, it might mean its ill-defined and refactoring the code might help both in naming and general code quality. Remember, naming things is a skill and you will get better with practice.
+In general, you want your names to summarize the use and have a part of speech that matches its purpose. For example, functions should usually be an action phrase like "update_logging_params" or "set_waypoints". This makes it clear both what the function does (broadly) and that it's a function. If the function was called "waypoints" it would be unclear it's even a function. For classes, having a word like 'Manager' or 'Controller' can be useful when naming a class that has broad responsibilities. Also, if something is particularly hard to name, it might mean its ill-defined and refactoring the code might help both in naming and general code quality. Remember, naming things is a skill and you will get better with practice.
 
 Finally, since Python unfortunatly doesn't have a pulbic/private distiction, we will use the convention that a single underscore preceding the name of a function or variable means that its private to the class.
 ```python
@@ -33,9 +33,9 @@ class MyClass:
 ```
 
 ## Code Formatting
-We would like you to use a formatter. This will change the whitespace (and sometimes [other stuff](https://peps.python.org/pep-0008/)) in your code according to some consistent rules. It doesn't always make the code look better but it helps make code consistent to read even when written by multiple people. 
+We would like you to use a formatter. This will change the whitespace (and sometimes [other stuff](https://black.readthedocs.io/en/stable/)) in your code according to some consistent rules. It doesn't always make the code look better but it helps make code consistent to read even when written by multiple people. 
 
-To set this up in VS Code, go to the extensions tab on the left side (Ctrl/Cmd+Shift+X) and search "Black Formatter" the publisher should be Microsoft and have a verified chekcmark. Click install. Next, go to settings (Ctrl/Cmd+,) and search "format on save" and check the box. When you first save on a Python file, there is going to be a popup in the bottom right corner that will ask you if you want to use Black as the default formatter for Python, click Yes. Now, your code will be formatted whenever it is saved. If you are interested in the specifics of the Black formatter, look [here](https://black.readthedocs.io/en/stable/)
+To set this up in VS Code, go to the extensions tab on the left side (Ctrl/Cmd+Shift+X) and search "Black Formatter" the publisher should be Microsoft and have a verified chekcmark. Click install. Next, go to settings (Ctrl/Cmd+,) and search "format on save" and check the box. When you first save on a Python file, there is going to be a popup in the bottom right corner that will ask you if you want to use Black as the default formatter for Python, click Yes. Now, your code will be formatted whenever it is saved.
 
 ## Documentation and Function Specification
 To document a function, you need to write a specification. This is a description of what the function does that should fully specify the behavior of the function for any input. 
@@ -186,7 +186,7 @@ When you do this, its good practice to add a check to determine if the file is b
 ```python
 # Note both __name__ and '__main__' have double underscores before and after them
 if __name__ == '__main__': 
-    # This code is not run when imported
+    # This code is not run when imported, but is when run directly
 ```
 When the file is run directly (either in the terminal or by clicking the play button in VS Code) this if statement will be true, but when importing it will be false. This way you can have your variable, class, and function definitions outside the if statement (accessible by import) but code you only want to run sometimes (for example tests) inside.
 

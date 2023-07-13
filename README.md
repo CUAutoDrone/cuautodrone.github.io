@@ -1,6 +1,9 @@
 # CUAD CS Subteam Materials
 This is a website to display the onboarding materials and other documents for the Cornell University Autonomous Drone Project Team. It is inspired by the [CS 3110 Online Textbook](https://cs3110.github.io/textbook/cover.html). It is essentially a file viewer for [markdown](https://www.markdownguide.org/getting-started/) (.md) files using [Marked](https://marked.js.org/), it uses [Prism](https://prismjs.com/) to do code syntax highlighting, [psudocode.js](https://github.com/SaswatPadhi/pseudocode.js) to render psudocode and [GitHub Pages](https://pages.github.com/) for hosting.
 
+## Authors
+Website created by **JT Klenke**, onboarding materials written by **Aditya Kakade** and **JT Klenke** with help from **Mavis Lee**.
+
 ## How it works
 As I've said, the core of this website is a markdown file viewer. If you want to add or edit pages, I suggest looking at a [markdown cheat sheet](https://www.markdownguide.org/cheat-sheet/). Just like typical markdown, it supports KaTeX inline and block math notation using `$...$` and `$$...$$`, like $\frac{1}{2}$ and 
 $$\sum_{n=1}^\infty {\frac{1}{n^2} = \frac{\pi^2}{6}}$$
@@ -138,7 +141,6 @@ Fixed Typo and Added Detail
 ```
 
 
-If you are adding a page or changing the layout, the above instructions still apply. Also, make sure you run **makeJSON.py** before pushing. It should print "**JSON Completed**" and nothing else! If there is an error, it means that the files were improperly laid out, and you will have to fix it. You should also double-check that the changes you have made created the desired effect before pushing the repo (you can use Live Server, a VS Code extension, to see it in your browser before you push).
-
+If you are adding a page or changing the layout, the above instructions still apply. Also, make sure you run *makeJSON.py* before pushing. It should print "**JSON Completed**" and nothing else! If there is an error, it means that the files were improperly laid out, and you will have to fix it. You should also double-check that the changes you have made created the desired effect *before* pushing to the repo (you can use Live Server, a VS Code extension, to see it in your browser before you push).
 
 If you have any suggestions to make the website better or easier to update, feel free to reach out!
