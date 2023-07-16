@@ -11,10 +11,12 @@ The first icon is the **Explorer** (which you can get to with Ctrl/Cmd+Shift+X),
 
 ![VS Code Activity Bar](imgs/vscode/VSC_Activity_Bar.png)
 
-VS Code is designed to work in a directory, so you need to tell it where it should be working. Typically, it's easier to open Code where you want to work rather than telling it afterward, how you do this depends a bit on your OS. 
+VS Code is designed to work in a directory, so you need to tell it where it should be working. Typically, it's easier to open Code where you want to work rather than telling it afterward, how you do this depends a bit on your OS.
 - In Linux (and WSL) you can use the command 'code .' which opens Code in the current working directory.
-- In Windows, you can rick-click in/on a folder then, in Windows 10, there will be an option to 'Open with Code', in Windows 11, you have to click 'Show more options' first.
-- In MacOS, you need to open the Command Palette (Cmd+Shift+P) in VS Code and type 'shell command' to find **Shell Command: Install 'code' command in PATH**, select it, then restart the terminal and you can use 'code .' just like in Linux.
+- In Windows, you can rick-click in/on a folder then, in Windows 10, there will be an option to 'Open with Code', in Windows 11, you have to click 'Show more options' first. You can also use 'code .' in powershell to open in your current working directory.
+- In MacOS, you need to open the Command Palette (Cmd+Shift+P) in VS Code and type 'shell command' to find **Shell Command: Install 'code' command in PATH**, select it, then restart the terminal and you can use 'code .' to open in your current working directory.
+
+Your working directory is the path that shows in the prefix to the terminal, you can also see what it is using `pwd` in the terminal. If you don't know how to navigate in terminal, look at [this](https://gomakethings.com/navigating-the-file-system-with-terminal/) guide, it works for any OS.
 
 Before continuing, open VS Code in the directory you want to work on (you might want to make one just for CUAD things). Now, in Explorer, you should see the folder name at the top in bold with the contents listed below.
 
@@ -77,6 +79,6 @@ Technically, there are sometimes more icons, but it's context-dependent. For Pyt
 - *Ctrl/Cmd+Shift+P* &nbsp;Opens the Command Palette, where you can search for commands
 
 Also, while in the editor, you can right-click on a variable to bring up a menu with some very helpful options. The most useful are
-- F12 &nbsp;Go to definition, this will bring your screen to where this variable is defined, it will adhere to scope and open the necessary file in a new tab if needed.
-- Shift+F12 &nbsp;Go to references, this will show all the places this variable is used in your code.
-- F2 &nbsp;Rename Symbol, this will rename the variable (again respecting scope) to something new, use this instead of a find and replace as it's almost impossible to make a mistake.
+- *F12* &nbsp;Go to definition, this will bring your screen to where this variable is defined, it will adhere to scope and open the necessary file in a new tab if needed.
+- *Shift+F12* &nbsp;Go to references, this will show all the places this variable is used in your code.
+- *F2* &nbsp;Rename Symbol, this will rename the variable (again respecting scope) to something new, use this instead of a find and replace as it's almost impossible to make a mistake.
