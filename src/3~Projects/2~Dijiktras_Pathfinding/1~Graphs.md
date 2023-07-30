@@ -16,7 +16,7 @@ If the edges in a graph have weights, the graph is referred to as a **weighted g
 
 ## Connecting the Two
 
-When you have a set of nodes and the edges between them, you have a graph!  In code, graphs can be represented in differetn ways -- most common are adjacency lists and adjacency matrices.
+When you have a set of nodes and the edges between them, you have a graph!  In code, graphs can be represented in different ways -- most common are adjacency lists and adjacency matrices.
 
 ## Adjacency Lists & Matrices
 To learn a bit more about the ways that graphs can be represented, you can watch this video!

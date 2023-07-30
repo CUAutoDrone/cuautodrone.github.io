@@ -110,13 +110,13 @@
                 "children": [
                     {
                         "type": "subsection",
-                        "name": "Pathfinding",
-                        "path": "src/3~Projects/2~Dijiktras_Pathfinding/1~Pathfinding.md"
+                        "name": "Graphs",
+                        "path": "src/3~Projects/2~Dijiktras_Pathfinding/1~Graphs.md"
                     },
                     {
                         "type": "subsection",
-                        "name": "Graphs",
-                        "path": "src/3~Projects/2~Dijiktras_Pathfinding/2~Graphs.md"
+                        "name": "Pathfinding",
+                        "path": "src/3~Projects/2~Dijiktras_Pathfinding/2~Pathfinding.md"
                     },
                     {
                         "type": "subsection",
