@@ -71,6 +71,9 @@ cat ~/.ssh/<your-sshkey-name>.pub
 
 &nbsp;  
 
+## Cloning
+Once you have authentication setup you can clone a repository. Near the top of the repository you want to clone there is a green button that says **Code** when you click on it, there is an option for HTTPS and SSH choose the one that matches your authentication. Copy the provided text and that is the **\<repository\>** you use to clone.
+
 ## Common Git Commands
 
 GitHub does provide [documentation](https://git-scm.com/docs/git) for all of its commands, but here are some quick overviews!
@@ -135,7 +138,7 @@ ___
 
 ## Commit Messages
 
-Whenever you make a commit, git will prompt you for a commit message. It will open a text editor (by default Vim on both MacOS and Windows), once you type your message use Ctrl/Cmd+O to confim your message and Ctrl/Cmd+X to exit Vim and return to the terminal.
+Whenever you make a commit, git will prompt you for a commit message. It will open a text editor (by default GNU nano on both MacOS and Windows), once you type your message use Ctrl/Cmd+O and then Enter/Return to confim your message and Ctrl/Cmd+X to exit nano and return to the terminal.
 
 Your commit message is very important, as it helps you (and others) keep track of what was accomplished in each commit over the course of your project.
 
