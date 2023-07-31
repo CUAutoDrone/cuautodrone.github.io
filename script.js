@@ -31,7 +31,7 @@ function makeCategories(json) {
         categories.appendChild(sections)
     })
 
-    document.getElementsByClassName('sidebar')[0].appendChild(categories)
+    document.getElementById('sidebar').appendChild(categories)
     prepareDocs()
 
 }
