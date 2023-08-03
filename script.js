@@ -108,6 +108,20 @@ function displayMd(md) {
             algorithms.forEach(function (algorithm) {
                 algorithm.remove()
             });
+
+            const paragraphs = document.querySelectorAll('p:not([class])');
+            paragraphs.forEach(paragraph => {
+                const katexSpans = paragraph.querySelectorAll('span.katex');
+                katexSpans.forEach(katexSpan => {
+                    const next = katexSpan.nextSibling;
+                    if (next && next.nodeType === Node.TEXT_NODE) {
+                        const punctuation = ['.', ',', '\'', '"', ';', ')', '?', '!', ']', '-']
+                        if (next.textContent[0] == ' ' && punctuation.includes(next.textContent[1])) {
+                            next.textContent = next.textContent.slice(1)
+                        }
+                    }
+                });
+            });
         });
 }
 

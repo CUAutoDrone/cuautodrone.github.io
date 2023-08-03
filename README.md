@@ -7,6 +7,9 @@ Website created by **JT Klenke**, onboarding materials written by **Aditya Kakad
 ## How it works
 As I've said, the core of this website is a markdown file viewer. If you want to add or edit pages, I suggest looking at a [markdown cheat sheet](https://www.markdownguide.org/cheat-sheet/). Just like typical markdown, it supports [KaTeX](https://katex.org/docs/supported.html) inline and block math notation using `$...$` and `$$...$$`, like $\frac{1}{2}$ and 
 $$\sum_{n=1}^\infty {\frac{1}{n^2} = \frac{\pi^2}{6}}$$
+
+When using inline KaTeX, the last \$ must be followed by a space (trust me, the regexes to fix this aren't worth it), and any punctuation will be moved back to look correct. For example, `'$x^2$ .'` looks like $x^2$ . The characters that do this are `. , ? ! ) ] ' " ; -`
+
 The only significant difference from typical markdown is the code blocks. When you provide a language at the top of a code block, this site will add a copy icon that users can click to copy the code block.
 ```Python
 # This is some example Python code that supports syntax highlighting and quick copying
