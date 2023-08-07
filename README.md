@@ -95,9 +95,9 @@ The layout of this repo is roughly like this
 
 Images go in the *imgs* directory and can be accessed in markdowns by putting their path relative to *index.html*, don't worry about where the markdown file that uses the images is located. For example,
 ```markdown
-![CUAD Logo](imgs/logos/CUAD_Logo.png)
+![CUAD Logo](imgs/logos/CUAD_Logo_Darkmode.svg)
 ```
-![CUAD Logo](imgs/logos/CUAD_Logo.png)
+![CUAD Logo](imgs/logos/CUAD_Logo_Darkmode.svg)
 
 
 The navigation bar is determined by navbar.json, a JSON file that must match the file structure in *src*. Running *makeJSON.py* will generate a JSON or raise an error if the file structure is invalid. Since the file structure of *src* entirely determines how the navbar looks, it should be arranged as follows.
