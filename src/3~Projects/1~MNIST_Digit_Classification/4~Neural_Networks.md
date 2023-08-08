@@ -61,16 +61,18 @@ The goal of the neural network is to be able to approximate any function. The fu
 ## Loss functions
 The final part of the NN architecture is the loss function. This is the function we use to compare the output our NN gave us (the activation of our output layer) with the correct answer (the vector that is part of our training data). There are lots of different loss functions, some of which are very complicated, but fundamentally, what they are doing is very simple. If we have two vectors, we want to encapsulate how "close" they are. Small values will mean that the two vectors are close (which means our NN is close to predicting the correct answer) and large values mean the opposite. The most basic possible loss function would simply be the average of all the differences between the values. That is if we had an n-dimensional output vector $y$ , and the vector we wanted $\hat{y}$ . Then the loss function would be:
 $$
-\frac{1}{n}\sum_{i=0}^n |y_i - \hat{y}_i|
+\frac{1}{n}\sum_{i=0}^n |y_i - \hat{y_i}|
 $$
-This is probably the most intuitive loss function, when the vectors are identical, its value is 0, otherwise it will be positive. This would work fine as a loss function (it's called L1 loss or mean absolute error) but there are a few problems that hurt it in practice. First, the absolute value makes it hard to take the derivative (which is important for training). Additionally, imagine we had a vector that was 1 million elements long. If each of those values was off by 1, then the total loss would be 1. Alternatively, if we have a vector where 1 million - 1 elements are off by .5 and the last if off by half a million. Both of these (almost) give the same loss but the first is probably preferable. It's usually better to have lots of slightly wrong values than to have one value that is way off. We can fix both of these issue by replacing the absolute value with a square.
+This is probably the most intuitive loss function, when the vectors are identical, its value is 0, otherwise it will be positive. This would work fine as a loss function (it's called L1 loss or mean absolute error) but there are a few problems that hurt it in practice. First, the absolute value makes it hard to take the derivative (which is important for training). Additionally, imagine we had a vector that was 1 million elements long. If each of those values was off by 1, then the total loss would be 1. Alternatively, we could have a vector where 1 million - 1 elements are off by .5 and the last is off by half a million. Both of these give the same loss (almost) but the first is probably preferable. It's usually better to have lots of slightly wrong values than to have one value that is way off. We can fix both of these issue by replacing the absolute value with a square.
 $$
-\frac{1}{n}\sum_{i=0}^n (y_i - \hat{y}_i)^2
+\frac{1}{n}\sum_{i=0}^n (y_i - \hat{y_i})^2
 $$
-Now, outlier values are punished more and this has a nice derivative. This loss function is called Mean Square Error (MSE).
+Now, outlier values are punished more and the function has a nice derivative. This loss function is called Mean Square Error (MSE).
 
-
-
+The last loss function we'll talk about is called the Cross-Entropy Loss function. It is commonly used for classification problems. It requires that the output values sum to 1 which corresponds to the networks "predicted probability" of each class, essentially how confident the network is that the input data is of thats class. This is usually achieved with SoftMax, an activation function explained later (technically, PyTorch does this step for you when using Cross Entropy). Additionally, the encoding scheme also needs to be one-hot. The specifics of why the Cross-Entropy function works well don't matter right now, but since this is one the most commonly used loss functions for classification, it's worth knowing about. For $C$ total classes, the function is
+$$
+-\sum_{c=1}^C \hat{y_c} \log{y_c}
+$$
 
 ## Training a Neural Network
 So how do neural networks learn? If we take it for granted that a neural network can approximate any function, then we still need to find the weights and biases that make the network approximate our function. That's the goal of training. As I talked about in the ML section, you can think of finding the correct weights and biases as an optimization problem. The function that we are minimizing is the loss function over the data in our training set. Remember to note that this is a distinct function from the one our neural network is approximating. The function we are optimizing takes in all our weights and biases, our training data and the model (which includes the activation functions and our loss function) and outputs one number: the loss. This is the value we are trying to minimize.

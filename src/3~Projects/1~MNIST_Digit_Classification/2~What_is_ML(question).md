@@ -30,16 +30,64 @@ Transfer learning, also commonly called fine-tuning, is when you start your trai
 ## Data
 Data is one of the biggest limiting factors in how good your model will be. This is true for the relatively simple models we train here and it's true for OpenAI and Google. Therefore, it's worth explaining what makes data good or bad and how we use it. The first step in using any data is to convert it into a useful format, something that the computer can understand. Typically, this means turning your data into a vector or a matrix, ideally, this process with preserve everything important about your data and may even encode some additional information. For example, when vectorizing words, it's possible to make it so that vectors that are close together in n-dimensional space have similar meanings, this is called [word embeddings](https://www.tensorflow.org/text/guide/word_embeddings). For the images we use in computer vision, we usually just use a matrix that encodes the RGB values for each pixel (technically a tensor since there's a matrix for each channel), this also preserves important information, pixels that are close together in the image are close in the matrix. The lesson of word embeddings is still important though, if you can encode useful information in the data vectorization, model training will be faster and better.
 
+For classifying digits, what data format should we use? A reasonable first attempt would be to just have the algorithm output a value from 0 to 9 and it's selection is the closest integer, but this has a few problems. If the models sees a 1 and guessing it's a 5, that is not any better than it seeing a 1 and guessing it's a 7. We want this fact to be encapsulated in our encoding. For classification tasks, we usually want our different classification vectors to be orthogonal, since they are distinct. This might not always be the case, but it is for recognizing digits. So how do we encode digits? The most common method is called one-hot encoding. If we have n classes, then our encoding is an n-dimensional vector where one of the components is 1 and the rest are 0. The "one-hot" component marks the class. For example, with digits we'd have the first component of the vector represent 0, the second 1, etc. 
+$$
+2 \mapsto \begin{bmatrix}
+0 \\
+0 \\
+1 \\
+0 \\
+0 \\
+0 \\
+0 \\
+0 \\
+0 \\
+0 \\
+\end{bmatrix} \hspace{0.2cm}
+5 \mapsto \begin{bmatrix}
+0 \\
+0 \\
+0 \\
+0 \\
+0 \\
+1 \\
+0 \\
+0 \\
+0 \\
+0 \\
+\end{bmatrix} \hspace{0.2cm} 
+9 \mapsto \begin{bmatrix}
+0 \\
+0 \\
+0 \\
+0 \\
+0 \\
+0 \\
+0 \\
+0 \\
+0 \\
+1 \\
+\end{bmatrix}
+$$
+Its important to note that which class goes to which component is arbitrary, as long as it's consistent. You can think of each component as the probability that the image is of a certain class, since we know the answer with certainty, the values are either 1 or 0.
+
 ### Normalization
-Normalization is the process of changing our data so that it all has similar vector amplitudes. This is not always necessary but is useful for standardizing the data, sort of like making sure all the units are in meters and seconds when doing a physics problem. If you were, for example, considering how age and annual income affect a person's net worth, the values for income and net worth are likely to be at least in the thousands (and for net worth it might be negative), while age is likely in the range 0-100. Thus, the model, when seeing only numbers devoid of context, will likely learn that age is more impactful than income because small changes to age make big changes to net worth, even if this is not actually true. To see why this is the case, consider the fact that a difference of 30 in age makes a huge difference to net worth but a difference of 30 in someone's annual income is insignificant. Therefore, it makes sense to normalize the data so that the range of values is similar, this can help the model to learn faster. Then when you feed in new data, you have to normalize it too using the same process. A typical normalization procedure is to move all of your data between 0 and 1 (or -1 and 1) using multiplication and addition.
+Normalization is the process of changing our data so that it all has similar vector amplitudes. This is not always necessary but is useful for standardizing the data, sort of like making sure all the units are in meters and seconds when doing a physics problem. If you were, for example, considering how age and annual income affect a person's net worth, the values for income and net worth are likely to be at least in the thousands (and for net worth it might be negative), while age is likely in the range 0-100. Thus, the model, when seeing only numbers devoid of context, will likely learn that age is more impactful than income because small changes to age make big changes to net worth, even if this is not actually true. To see why this is the case, consider the fact that a difference of 30 in age makes a huge difference to net worth but a difference of 30 in someone's annual income is insignificant. Therefore, it makes sense to normalize the data so that the range of values is similar, this can help the model to learn faster. Then when you feed in new data, you have to normalize it too using the same process. A typical normalization procedure is to move all of your data between 0 and 1 (or -1 and 1) using multiplication and addition. When using a neural network, this process can also help to prevent values from blowing up towards infinity.
+
 ### Bad Data
-Even when we have a lot of data, if the data is of low quality, then it may still be useless. Good data correctly represents the real world, where the model is deployed. If the training data doesn't match the real world, this is called a distributional shift. If you studied all year for your computer science class and then the final was on Greek poetry, you wouldn't do so great. But distributional shifts can be more subtle. Even small changes can have significant effects on model performance. For the MNIST digit classification problem, all the training data is centered, however, if you were to use the model on actual handwritten digits, that's not a guarantee. Specific to us, if we train the model on images taken in summer, it might not do as well in fall or winter. There are ways to make bad data better, called data augmentation or preprocessing which you will learn more about later. The best way to fix bad data however is to get good data. This means that the data should be varied and accurately reflect the environment the model might be deployed into. Combatting bad data is an active area of research, just recently, [liquid neural networks](https://news.mit.edu/2021/machine-learning-adapts-0128) were invented and seem to be resilient to distributional shift.
+Even when we have a lot of data, if the data is of low quality, then it may still be useless. Good data correctly represents the real world, where the model is deployed. If the training data doesn't match the real world, this is called a distributional shift. If you studied all year for your computer science class and then the final was on Greek poetry, you wouldn't do so great. But distributional shifts can be more subtle. Even small changes can have significant effects on model performance. For the MNIST digit classification problem, all the training data is centered, however, if you were to use the model on actual handwritten digits, that's not a guarantee. Specific to us, if we train the model on images taken in summer, it might not do as well in fall or winter. There are ways to make bad data better, called data augmentation or preprocessing which you will learn more about later. The best way to fix bad data however is to get good data in the first place. This means that the data should be varied and accurately reflect the environment the model might be deployed into. Combatting bad data is an active area of research, just recently, [liquid neural networks](https://news.mit.edu/2021/machine-learning-adapts-0128) were invented and seem to be resilient to distributional shift.
+
 ### Missing Data
-Sometimes we will have missing data. In the case of computer vision, this may be a corrupted file or an accidentally all-black image. In our case, we can just remove that data, in some applications missing data is the norm and there are techniques to fill in the missing data or use a special value to mark missing data.
+Sometimes we have missing data. In the case of computer vision, this may be a corrupted file or an accidentally all-black image. In our case, we can just remove that data, in some applications missing data is the norm and there are techniques to fill in the missing data or use a special value to mark missing data.
 
-## Common Problems
-
+## Fitting
+Fit is basically how well the model does on actual data. If the model is a bad fit for the data, then it's probably for one of two reasons.
 ### Overfitting
-This is what happens when the rule that the model learns is too specific for the data. For example, the "rule" might just be the data perfectly memorized, this will give a good result (perfect even) on the existing data but is useless to interpret new data. This generally happens when the model is too complicated and there is not enough data.
+This is what happens when the rule that the model learns is too specific for the data. For example, the "rule" might just be the data perfectly memorized, this will give a good result (perfect even) on the existing data but is useless to interpret new data. This generally happens when the model is too complicated and there is not enough data. Here is an example of a function that is overfit to the data (blue), and a function that is well fit (black).
+
+![An overfitted function for the data](imgs/nns/Overfitted_Data.png)
+
 ### Underfitting
-This is, predictably, the opposite of overfitting. Basically, when the rule is too simple for the data you gave it. For example, consider the line of best-fit example, if the data actually followed a quadratic, then any line would be a poor fit to the data and we would say it has been underfit. Typically, underfitting happens when the model is too simple or has not been trained for long enough (essentially the opposite of the reasons for overfitting).
+This is, predictably, the opposite of overfitting. Basically, when the rule is too simple for the data you gave it. For example, consider the line of best-fit example, if the data actually followed a quadratic, then any line would be a poor fit to the data and we would say it has been underfit. Typically, underfitting happens when the model is too simple or has not been trained for long enough (essentially the opposite of the reasons for overfitting). Here is an example of a function that is underfit to the data, we probably want something more parabolic to represent this data.
+
+![An underfitted function for the data](imgs/nns/Underfitted_Model.png)
