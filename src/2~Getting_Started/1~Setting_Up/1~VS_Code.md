@@ -11,7 +11,7 @@ The first icon is the **Explorer** (which you can get to with Ctrl/Cmd+Shift+X),
 
 ![VS Code Activity Bar](imgs/vscode/VSC_Activity_Bar.png)
 
-VS Code is designed to work in a directory, so you need to tell it where it should be working. Typically, it's easier to open Code where you want to work rather than telling it afterward, how you do this depends a bit on your OS.
+VS Code is designed to work in a directory, so you need to tell it where it should be working. Typically, it's easier to open Code where you want to work rather than telling it afterward, how you do this depends a bit on your OS. If you are completely unfamiliar with terminal, I suggest checking out the **Using Linux** section of **WSL**. The commands are standard across different OS, even though the guide is tailored to Linux.
 - In Linux (and WSL) you can use the command 'code .' which opens Code in the current working directory.
 - In Windows, you can rick-click in/on a folder then, in Windows 10, there will be an option to 'Open with Code', in Windows 11, you have to click 'Show more options' first. You can also use 'code .' in powershell to open in your current working directory.
 - In MacOS, you need to open the Command Palette (Cmd+Shift+P) in VS Code and type 'shell command' to find **Shell Command: Install 'code' command in PATH**, select it, then restart the terminal and you can use 'code .' to open in your current working directory.

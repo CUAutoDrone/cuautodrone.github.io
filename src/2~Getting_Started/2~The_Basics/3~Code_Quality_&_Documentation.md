@@ -16,7 +16,7 @@ Don't worry too much about long variable names, if you need a few words to descr
 
 In general, you want your names to summarize the use and have a part of speech that matches its purpose. For example, functions should usually be an action phrase like "update_logging_params" or "set_waypoints". This makes it clear both what the function does (broadly) and that it's a function. If the function was called "waypoints" it would be unclear it's even a function. For classes, having a word like 'Manager' or 'Controller' can be useful when naming a class that has broad responsibilities. Also, if something is particularly hard to name, it might mean its ill-defined and refactoring the code might help both in naming and general code quality. Remember, naming things is a skill and you will get better with practice.
 
-Finally, since Python unfortunatly doesn't have a pulbic/private distiction, we will use the convention that a single underscore preceding the name of a function or variable means that its private to the class.
+Finally, since Python unfortunately doesn't have a public/private distinction, we will use the convention that a single underscore preceding the name of a function or variable means that its private to the class.
 ```python
 class MyClass:
     # These are private, used only by the class internals.    
@@ -35,7 +35,7 @@ class MyClass:
 ## Code Formatting
 We would like you to use a formatter. This will change the whitespace (and sometimes [other stuff](https://black.readthedocs.io/en/stable/)) in your code according to some consistent rules. It doesn't always make the code look better but it helps make code consistent to read even when written by multiple people. 
 
-To set this up in VS Code, go to the extensions tab on the left side (Ctrl/Cmd+Shift+X) and search "Black Formatter" the publisher should be Microsoft and have a verified chekcmark. Click install. Next, go to settings (Ctrl/Cmd+,) and search "format on save" and check the box. When you first save on a Python file, there is going to be a popup in the bottom right corner that will ask you if you want to use Black as the default formatter for Python, click Yes. Now, your code will be formatted whenever it is saved.
+To set this up in VS Code, go to the extensions tab on the left side (Ctrl/Cmd+Shift+X) and search "Black Formatter" the publisher should be Microsoft and have a verified checkmark. Click install. Next, go to settings (Ctrl/Cmd+,) and search "format on save" and check the box. When you first save on a Python file, there is going to be a popup in the bottom right corner that will ask you if you want to use Black as the default formatter for Python, click Yes. Now, your code will be formatted whenever it is saved.
 
 ## Documentation and Function Specification
 To document a function, you need to write a specification. This is a description of what the function does that should fully specify the behavior of the function for any input. 
@@ -89,7 +89,7 @@ although it might be even better to have the code more explicitly describe what 
 screen_size_scale_factor = 2
 width *= screen_size_scale_factor
 ```
-Now the comment is unnecessary. Plus, if you ever have to change the code, you won't have to remember to change all the comments too. If possible, write the code to make commenting redundant.
+Now the comment is unnecessary. Plus, if you ever have to change the code, you won't have to remember to change all the comments too. If possible, write the code to make commenting redundant. Another good way to do this is to separate a complex functionality into a different function, then the function's name can describe what that part of the code does. This makes code more readable and compartmentalized, it can also help when refactoring code.
 
 Another reason to use comments is if the code is doing something complex. For example, if you are using an algorithm it's worth mentioning what it is.
 

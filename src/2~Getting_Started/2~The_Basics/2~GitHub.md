@@ -72,7 +72,7 @@ cat ~/.ssh/<your-sshkey-name>.pub
 &nbsp;  
 
 ## Cloning
-Once you have authentication setup you can clone a repository. Near the top of the repository you want to clone there is a green button that says **Code** when you click on it, there is an option for HTTPS and SSH choose the one that matches your authentication. Copy the provided text and that is the **\<repository\>** you use to clone.
+Once you have authentication setup you can clone a repository. Near the top of the repository you want to clone there is a green button that says **Code** when you click on it, there is an option for HTTPS and SSH choose the one that matches your authentication. Copy the provided text which will be the **\<repository\>** you use to clone.
 
 ## Common Git Commands
 

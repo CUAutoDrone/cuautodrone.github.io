@@ -1,1 +1,2 @@
 # The Basics
+This section will go over some basic concepts and tools you should know. It covers debugging strategies, the VS Code debugger, Git/GitHub source control, code quality and function documentation.
