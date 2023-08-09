@@ -105,38 +105,38 @@
             },
             {
                 "type": "section",
-                "name": "Dijiktras Pathfinding",
-                "path": "src/3~Projects/2~Dijiktras_Pathfinding/0~Dijiktras_Pathfinding.md",
+                "name": "Dijkstra's Pathfinding",
+                "path": "src/3~Projects/2~Dijkstra's_Pathfinding/0~Dijkstra's_Pathfinding.md",
                 "children": [
                     {
                         "type": "subsection",
                         "name": "Graphs",
-                        "path": "src/3~Projects/2~Dijiktras_Pathfinding/1~Graphs.md"
+                        "path": "src/3~Projects/2~Dijkstra's_Pathfinding/1~Graphs.md"
                     },
                     {
                         "type": "subsection",
                         "name": "Pathfinding",
-                        "path": "src/3~Projects/2~Dijiktras_Pathfinding/2~Pathfinding.md"
+                        "path": "src/3~Projects/2~Dijkstra's_Pathfinding/2~Pathfinding.md"
                     },
                     {
                         "type": "subsection",
                         "name": "Priority Queues",
-                        "path": "src/3~Projects/2~Dijiktras_Pathfinding/3~Priority_Queues.md"
+                        "path": "src/3~Projects/2~Dijkstra's_Pathfinding/3~Priority_Queues.md"
                     },
                     {
                         "type": "subsection",
                         "name": "Pseudocode",
-                        "path": "src/3~Projects/2~Dijiktras_Pathfinding/4~Pseudocode.md"
+                        "path": "src/3~Projects/2~Dijkstra's_Pathfinding/4~Pseudocode.md"
                     },
                     {
                         "type": "subsection",
                         "name": "The Project",
-                        "path": "src/3~Projects/2~Dijiktras_Pathfinding/5~The_Project.md"
+                        "path": "src/3~Projects/2~Dijkstra's_Pathfinding/5~The_Project.md"
                     },
                     {
                         "type": "subsection",
                         "name": "A*",
-                        "path": "src/3~Projects/2~Dijiktras_Pathfinding/6~A(star).md"
+                        "path": "src/3~Projects/2~Dijkstra's_Pathfinding/6~A(star).md"
                     }
                 ]
             }

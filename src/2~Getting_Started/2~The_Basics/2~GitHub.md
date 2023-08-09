@@ -9,10 +9,10 @@ Git is a version control system that allows you to manage your source code and m
 Git Bash is like your operating system's command prompt, but with added functionality and integration with git!  It still allows you to
 navigate your files, but makes it easy to view the branches your different repositories are on, and perform git commands.  Various IDEs
 do offer git integration as well, and at first glance this may seem like all you need.  After all, who would rather type commands over
-pressing a button to push or pull?  Git bash is still extremely useful to have/know how to use, though -- git integration in IDEs can
+pressing a button to push or pull?  Git bash is still extremely useful to have and know how to use, though, since git integration in IDEs can
 often be buggy.
 
-If you don’t already have one, go to GitHub and create an account
+If you don’t already have one, go to GitHub and create an account using your Cornell email.
 
 Install Git + Git Bash [Here](https://git-scm.com/downloads)
 
@@ -138,7 +138,7 @@ ___
 
 ## Commit Messages
 
-Whenever you make a commit, git will prompt you for a commit message. It will open a text editor (by default GNU nano on both MacOS and Windows), once you type your message use Ctrl/Cmd+O and then Enter/Return to confim your message and Ctrl/Cmd+X to exit nano and return to the terminal.
+Whenever you make a commit, git will prompt you for a commit message. It will open a text editor (by default GNU nano on both MacOS and Windows), once you type your message use Ctrl/Cmd+O and then Enter/Return to confirm your message and Ctrl/Cmd+X to exit nano and return to the terminal.
 
 Your commit message is very important, as it helps you (and others) keep track of what was accomplished in each commit over the course of your project.
 

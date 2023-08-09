@@ -1,1 +1,6 @@
 # MNIST Digit Classification
+The first onboarding project will be to classify handwritten digits. This is basically the Hello World of computer vision and it will teach you all the foundations you need to know about machine learning and computer vision.
+
+The MNIST (Modified National Institute of Standards and Technology, for those curious) dataset is a collection of 70,000 low resolution (28x28px) images of handwritten digits and the corresponding digit as a number. The goal is to write a program that can take in a new image and classify it correctly.
+
+You will do this by creating a neural network using PyTorch. Each section will explain the concepts you need to know along the way, from using libraries to machine learning and neural networks. If you get stuck or don't understand a concept, please reach out! When you run into bugs, make sure you've tried the steps outlined in the debugging section, but don't be afraid to ask us for help. Good luck!

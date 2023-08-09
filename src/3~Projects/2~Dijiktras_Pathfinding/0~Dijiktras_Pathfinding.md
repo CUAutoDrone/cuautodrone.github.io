@@ -1,4 +1,0 @@
-# Dijiktras Pathfinding
-In this project, you will practice researching on your own. This is much more analagous to what actually happens when we write new code: we don't already know the answers. The goal of this assignment is to implement Dijktras algorithm, a classic and foundational pathfinding algorithm. The rest of the materials explain things you are likely to come across in implementing this algorithm but much of the learning will be up to you. We want you to research Dijktra's on your own and figure out how it works and how to implement it efficiently.
-
-Of course, this is still an onboarding project, and we still (mostly) know the answers, so don't be afraid to reach out if you get really stuck.

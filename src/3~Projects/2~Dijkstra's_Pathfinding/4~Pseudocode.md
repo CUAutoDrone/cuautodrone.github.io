@@ -8,7 +8,7 @@ Psudocode is a way of communicating the high level workings of an algorithm that
 \WHILE{$G \neq \emptyset$}
 \COMMENT{This is a while loop thats continues as long as $G$ is not empty$\newline\qquad\qquad\qquad\qquad\qquad\emptyset$ is the emptyset, which really just means that it's empty}
 \STATE{$x \gets x + 1$}
-\COMMENT{This is an assinment, read ``$x$ gets $x + 1$"}
+\COMMENT{This is an assignment, read ``$x$ gets $x + 1$"}
 \ENDWHILE
 \end{algorithmic}
 \end{algorithm}

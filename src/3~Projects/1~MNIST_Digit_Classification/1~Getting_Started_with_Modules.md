@@ -31,7 +31,7 @@ ___
 np.array(array_values)
 ```
 - This function turns the python array that is passed in as an argument into an n-dimensional numpy array! Compared to
-normal arrays, numpy arrays are much easier to manipulate.  For example, you are able to apply a mathematical function to all values in a numpy array without having to use a for loop, which tradtional python would require.
+normal arrays, numpy arrays are much easier to manipulate.  For example, you are able to apply a mathematical function to all values in a numpy array without having to use a for loop, which traditional python would require.
 
 ```python
 normal_array = [1, 2, 3, 4];
@@ -96,7 +96,7 @@ plt.boxplot(x, ... ) #boxplot
 
 ___
 
-Y'all know the drill by now -- visit the matplotlib documentation for more in-depth info.
+Y'all know the drill by now &mdash; visit the matplotlib documentation for more in-depth info.
 ___
 
 # Useful Tutorials
