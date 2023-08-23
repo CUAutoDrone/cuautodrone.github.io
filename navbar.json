@@ -6,13 +6,13 @@
             {
                 "type": "section",
                 "name": "Rules & Grading",
-                "path": "src/1~Introduction/1~Rules_&_Grading.md",
+                "path": "src\\1~Introduction\\1~Rules_&_Grading.md",
                 "children": []
             },
             {
                 "type": "section",
                 "name": "Member List",
-                "path": "src/1~Introduction/2~Member_List.md",
+                "path": "src\\1~Introduction\\2~Member_List.md",
                 "children": []
             }
         ]
@@ -24,44 +24,44 @@
             {
                 "type": "section",
                 "name": "Setting Up",
-                "path": "src/2~Getting_Started/1~Setting_Up/0~Setting_Up.md",
+                "path": "src\\2~Getting_Started\\1~Setting_Up\\0~Setting_Up.md",
                 "children": [
                     {
                         "type": "subsection",
                         "name": "VS Code",
-                        "path": "src/2~Getting_Started/1~Setting_Up/1~VS_Code.md"
+                        "path": "src\\2~Getting_Started\\1~Setting_Up\\1~VS_Code.md"
                     },
                     {
                         "type": "subsection",
                         "name": "Anaconda",
-                        "path": "src/2~Getting_Started/1~Setting_Up/2~Anaconda.md"
+                        "path": "src\\2~Getting_Started\\1~Setting_Up\\2~Anaconda.md"
                     },
                     {
                         "type": "subsection",
                         "name": "WSL",
-                        "path": "src/2~Getting_Started/1~Setting_Up/3~WSL.md"
+                        "path": "src\\2~Getting_Started\\1~Setting_Up\\3~WSL.md"
                     }
                 ]
             },
             {
                 "type": "section",
                 "name": "The Basics",
-                "path": "src/2~Getting_Started/2~The_Basics/0~The_Basics.md",
+                "path": "src\\2~Getting_Started\\2~The_Basics\\0~The_Basics.md",
                 "children": [
                     {
                         "type": "subsection",
                         "name": "Debugging",
-                        "path": "src/2~Getting_Started/2~The_Basics/1~Debugging.md"
+                        "path": "src\\2~Getting_Started\\2~The_Basics\\1~Debugging.md"
                     },
                     {
                         "type": "subsection",
                         "name": "GitHub",
-                        "path": "src/2~Getting_Started/2~The_Basics/2~GitHub.md"
+                        "path": "src\\2~Getting_Started\\2~The_Basics\\2~GitHub.md"
                     },
                     {
                         "type": "subsection",
                         "name": "Code Quality & Documentation",
-                        "path": "src/2~Getting_Started/2~The_Basics/3~Code_Quality_&_Documentation.md"
+                        "path": "src\\2~Getting_Started\\2~The_Basics\\3~Code_Quality_&_Documentation.md"
                     }
                 ]
             }
@@ -74,69 +74,69 @@
             {
                 "type": "section",
                 "name": "MNIST Digit Classification",
-                "path": "src/3~Projects/1~MNIST_Digit_Classification/0~MNIST_Digit_Classification.md",
+                "path": "src\\3~Projects\\1~MNIST_Digit_Classification\\0~MNIST_Digit_Classification.md",
                 "children": [
                     {
                         "type": "subsection",
                         "name": "Getting Started with Modules",
-                        "path": "src/3~Projects/1~MNIST_Digit_Classification/1~Getting_Started_with_Modules.md"
+                        "path": "src\\3~Projects\\1~MNIST_Digit_Classification\\1~Getting_Started_with_Modules.md"
                     },
                     {
                         "type": "subsection",
                         "name": "What is ML?",
-                        "path": "src/3~Projects/1~MNIST_Digit_Classification/2~What_is_ML(question).md"
+                        "path": "src\\3~Projects\\1~MNIST_Digit_Classification\\2~What_is_ML(question).md"
                     },
                     {
                         "type": "subsection",
                         "name": "Preprocessing",
-                        "path": "src/3~Projects/1~MNIST_Digit_Classification/3~Preprocessing.md"
+                        "path": "src\\3~Projects\\1~MNIST_Digit_Classification\\3~Preprocessing.md"
                     },
                     {
                         "type": "subsection",
                         "name": "Neural Networks",
-                        "path": "src/3~Projects/1~MNIST_Digit_Classification/4~Neural_Networks.md"
+                        "path": "src\\3~Projects\\1~MNIST_Digit_Classification\\4~Neural_Networks.md"
                     },
                     {
                         "type": "subsection",
                         "name": "PyTorch",
-                        "path": "src/3~Projects/1~MNIST_Digit_Classification/5~PyTorch.md"
+                        "path": "src\\3~Projects\\1~MNIST_Digit_Classification\\5~PyTorch.md"
                     }
                 ]
             },
             {
                 "type": "section",
                 "name": "Dijkstra's Pathfinding",
-                "path": "src/3~Projects/2~Dijkstra's_Pathfinding/0~Dijkstra's_Pathfinding.md",
+                "path": "src\\3~Projects\\2~Dijkstra's_Pathfinding\\0~Dijkstra's_Pathfinding.md",
                 "children": [
                     {
                         "type": "subsection",
                         "name": "Graphs",
-                        "path": "src/3~Projects/2~Dijkstra's_Pathfinding/1~Graphs.md"
+                        "path": "src\\3~Projects\\2~Dijkstra's_Pathfinding\\1~Graphs.md"
                     },
                     {
                         "type": "subsection",
                         "name": "Pathfinding",
-                        "path": "src/3~Projects/2~Dijkstra's_Pathfinding/2~Pathfinding.md"
+                        "path": "src\\3~Projects\\2~Dijkstra's_Pathfinding\\2~Pathfinding.md"
                     },
                     {
                         "type": "subsection",
                         "name": "Priority Queues",
-                        "path": "src/3~Projects/2~Dijkstra's_Pathfinding/3~Priority_Queues.md"
+                        "path": "src\\3~Projects\\2~Dijkstra's_Pathfinding\\3~Priority_Queues.md"
                     },
                     {
                         "type": "subsection",
                         "name": "Pseudocode",
-                        "path": "src/3~Projects/2~Dijkstra's_Pathfinding/4~Pseudocode.md"
+                        "path": "src\\3~Projects\\2~Dijkstra's_Pathfinding\\4~Pseudocode.md"
                     },
                     {
                         "type": "subsection",
                         "name": "The Project",
-                        "path": "src/3~Projects/2~Dijkstra's_Pathfinding/5~The_Project.md"
+                        "path": "src\\3~Projects\\2~Dijkstra's_Pathfinding\\5~The_Project.md"
                     },
                     {
                         "type": "subsection",
                         "name": "A*",
-                        "path": "src/3~Projects/2~Dijkstra's_Pathfinding/6~A(star).md"
+                        "path": "src\\3~Projects\\2~Dijkstra's_Pathfinding\\6~A(star).md"
                     }
                 ]
             }
