@@ -1,0 +1,2 @@
+# The Competition
+The event that we are competing in is called the, [International Aerial Robotics Competition](http://www.aerialroboticscompetition.org/) (IARC). Currently, we are working on Mission 9, which requires fully autonomous flight through an obstacle course. The drone must fly a total of 4 miles, install a module on a mast that sways and return home all within 9 minutes. The full rules for the competition can be found [here](http://www.aerialroboticscompetition.org/rules.php).
