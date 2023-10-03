@@ -14,9 +14,8 @@ Keep in mind, the amount of credits you are taking CUAD for will impact how many
 
 | Category                     | Percentage |
 |------------------------------|------------|
-| Subteam Attendance           | 20  |
-| GBody Attendance             | 10  |
-| End of Year Peer Eval        | 15  |
+| Subteam Attendance           | 25  |
+| GBody Attendance             | 20  |
 | End of Year Eval From Leads  | 15  |
 | Github Progress Update       | 10  |
 | End of Semester Report       | 30  |

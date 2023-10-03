@@ -28,7 +28,7 @@ import torch
 
 You probably remember numpy arrays from the 'Getting Started With Modules Section.'  Tensors, a basic data structure used in PyTorch, are similar to arrays!
 
-Tensors are important because we can use them to represent our model's inputs, outputs, and parameters.  It is important to note that tenosrs are not mutable, like numpy arrays are.  In addition, tensors are a preferred alternative to numpy arrays when working with machine learning because they have support for accelerators like GPU & TPUs.
+Tensors are important because we can use them to represent our model's inputs, outputs, and parameters.  It is important to note that tensors are not mutable, like numpy arrays are.  In addition, tensors are a preferred alternative to numpy arrays when working with machine learning because they have support for accelerators like GPU & TPUs.
 
 Tensors can be created from data, numpy arrays, and other tensors.  A few examples are listed below:
 
