@@ -9,4 +9,4 @@ Debugging can be one of the more tedious, unfun aspects of coding. Despite this,
 - Ask a friend! Often just explaining the problem can [help you find the solution](https://en.wikipedia.org/wiki/Rubber_duck_debugging) but even if it doesn't, having a fresh pair of eyes on the problem usually helps.
 
 ### VS Code Debugger
-VS Code offers some helpful debugging tools that allow you to pause code execution and check the values of variables and 
+VS Code offers some helpful debugging tools that allow you to pause code execution and check the values of variables and evaluate expressions. 
