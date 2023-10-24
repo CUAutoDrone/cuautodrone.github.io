@@ -26,16 +26,16 @@ import torch
 
 ## The Basics : Tensors
 
-You probably remember numpy arrays from the 'Getting Started With Modules Section.'  Tensors, a basic data structure used in PyTorch, are similar to arrays!
+Tensors are the basic data structure of PyTorch and they are very similar to Numpy arrays. They have the same format with of axis, shape and size.
 
-Tensors are important because we can use them to represent our model's inputs, outputs, and parameters.  It is important to note that tensors are not mutable, like numpy arrays are.  In addition, tensors are a preferred alternative to numpy arrays when working with machine learning because they have support for accelerators like GPU & TPUs.
-
-Tensors can be created from data, numpy arrays, and other tensors.  A few examples are listed below:
+Tensors are how we represent our model's inputs, outputs, and parameters. It is important to note that tensors are not mutable, like Numpy arrays are. Another major distinction is that tensors can be transferred to different devices to speed up computation.  This is why tensors are a preferred alternative to Numpy arrays when working with machine learning because they have support for accelerators like GPU & TPUs. 
+ 
+Tensors can be created from data, Numpy arrays, and other tensors.  A few examples are listed below:
 
 ```python
 #From data
 ones = [[1, 1, 1],[1, 1, 1]]
-ones_tensor = torch.tensor(ones)
+ones_tensor = torch.Tensor(ones)
 
 #From numpy arrays
 torch.from_numpy(numpy_array)
@@ -61,31 +61,36 @@ Like matrices, tensors also have operations including:
 - Creating from data only if certain conditions are met
 - Returning a filled tensor of a specified number
 
-Learn more tensor operations [here](https://pytorch.org/docs/stable/torch.html)
+Essentially all of the Numpy functions we talked about have an equivalent function in PyTorch. 
+
+Learn more tensor operations [here](https://pytorch.org/docs/stable/torch.html).
 
 ## Models
+The torch.nn class provides a variety of methods that perform common operations necessary to build neural networks. In order to create a custom model to train, you have to create a class that inherits from `torch.nn.Module`.
 
 PyTorch has a module that allows for the creation of models using various properties and methods.
 
 Neural networks can consist of many different layers, and PyTorch makes initializing a model and then passing an input through a specific set of layers very procedural.
 
-A typical Pytorch model is structured in the following way:
+A PyTorch model requires you to implement the following two methods:
 
-- An `__init__` function : Here, we will instantiate the model's layers and load the data that we will need!
+- An `__init__` function : Here, we will instantiate the model's layers. It can take whatever parameters you want that you can use to build the model's architecture. Inside the function you should call `super().__init__()`.
 
-- A `forward` function : Here, the input will be passed through the functions and layers, until an output is generated.
+- A `forward` function : This functions define how the input (the one parameter) is transformed into the output, whatever is returned from the function.
 
-- Any other useful methods that would help in computation/accessing info about your model! Think of your model like a python class -- as long as it has the required functions, you can build and add to it as needed.
+- Any other useful methods that would help in computation/accessing info about your model. Since your model is a Python class, it can contain whatever other methods you'd like. As long as it has the required functions, you can build and add to it as needed.
 
-Here is an example of a model class from PyTorch's website, with the above structure:
+Here is an example of a model class
 
 ```python
+from torch import nn
+
 class LeNet(nn.Module):
 
-    def __init__(self):
-        super(LeNet, self).__init__()
-        # 1 input image channel (black & white), 6 output channels, 5x5 square convolution
-        # kernel
+    def __init__(self, optional_args):
+        super().__init__() # call this to initialize the parent class
+
+        # 
         self.conv1 = nn.Conv2d(1, 6, 5)
         self.conv2 = nn.Conv2d(6, 16, 5)
         # an affine operation: y = Wx + b
