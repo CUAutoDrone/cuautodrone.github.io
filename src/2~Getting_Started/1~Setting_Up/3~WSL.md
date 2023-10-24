@@ -58,11 +58,11 @@ sudo apt install python3
 you should update Python (whether it was installed originally or not) and install pip3, Python package manager which is like apt but for Python libraries.
 ```bash
 sudo apt upgrade python3
-sudo apt install python-pip3
+sudo apt install python3-pip
 ```
-to get Python libraries you can now type **pip3 install [packagename]**, we'll install numpy to check everything is working
+to get Python libraries you can now type **pip install [packagename]**, we'll install numpy to check everything is working
 ```bash
-pip3 install numpy
+pip install numpy
 ```
 Now, open Python by typing
 ```bash
