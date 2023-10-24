@@ -301,6 +301,7 @@ cv2.imwrite("path/file.jpg", img_array)
 Once we have images to work with, OpenCV has lots of built in methods to do common image transformations. 
 
 **Resize**
+
 Resizes the image to a new width and height taken as a tuple. Takes an optional parameter of what kind of interpolation to do. Documentation [here](https://docs.opencv.org/3.4/da/d54/group__imgproc__transform.html#ga47a974309e9102f5f08231edc7e7529d).
 ```python
 img = cv2.imread("file.jpg")
@@ -333,9 +334,14 @@ Matplotlib enables us to visualize our data through various graphs, and can even
 np_img = np.asarray(image here)
 img_plt = plt.imshow(np_img)
 ```
+
+The most useful graphs are typically line graphs and scatter plots, although occasionally you'll use histograms. You can find a full list of the supported graph types in the PyPlot documentation.
 A few of the supported graph types are:
 ```python
+# The x and y values are a list of all of the datapoint's x and y
+plt.plot(x, y, ...) # line graph
 plt.scatter(x, y, ... ) #scatterplot
+
+
 plt.hist(x, bins, range, weights, ... ) #histogram
-plt.boxplot(x, ... ) #boxplot
 ```
