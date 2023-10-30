@@ -16,7 +16,7 @@ If you don’t already have one, go to GitHub and create an account using your C
 
 Install Git + Git Bash [Here](https://git-scm.com/downloads)
 
-If you are using WSL, you can run the command
+If you are using WSL, you can install everything you need by running the command
 ```shell
 sudo apt install git
 ```
