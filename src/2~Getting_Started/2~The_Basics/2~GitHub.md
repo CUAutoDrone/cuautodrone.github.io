@@ -16,6 +16,11 @@ If you don’t already have one, go to GitHub and create an account using your C
 
 Install Git + Git Bash [Here](https://git-scm.com/downloads)
 
+If you are using WSL, you can run the command
+```shell
+sudo apt install git
+```
+
 After installing, make sure you set your global username and email!  This can be done by entering the following commands in Git Bash:
 
 ```shell
