@@ -100,6 +100,11 @@
                         "type": "subsection",
                         "name": "PyTorch",
                         "path": "src/3~Projects/1~MNIST_Digit_Classification/5~PyTorch.md"
+                    },
+                    {
+                        "type": "subsection",
+                        "name": "Multiple Files",
+                        "path": "src/3~Projects/1~MNIST_Digit_Classification/6~Multiple_Files.md"
                     }
                 ]
             },

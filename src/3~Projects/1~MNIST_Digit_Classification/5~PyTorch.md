@@ -84,72 +84,156 @@ Here is an example of a model class
 
 ```python
 from torch import nn
+import torch.nn.functional as F
 
-class LeNet(nn.Module):
+class CustomModel(nn.Module):
 
     def __init__(self, optional_args):
         super().__init__() # call this to initialize the parent class
 
-        # 
-        self.conv1 = nn.Conv2d(1, 6, 5)
-        self.conv2 = nn.Conv2d(6, 16, 5)
-        # an affine operation: y = Wx + b
-        self.fc1 = nn.Linear(16 * 5 * 5, 120)  # 5*5 from image dimension
-        self.fc2 = nn.Linear(120, 84)
-        self.fc3 = nn.Linear(84, 10)
+        # Then define your layers
+
+        self.convolutional_layer = nn.Conv2d(in_channels, out_channels, kernel_size)
+        self.linear_layer = nn.Linear(in_features, out_features)
 
     def forward(self, x):
-        # Max pooling over a (2, 2) window
-        x = F.max_pool2d(F.relu(self.conv1(x)), (2, 2))
-        # If the size is a square you can only specify a single number
-        x = F.max_pool2d(F.relu(self.conv2(x)), 2)
-        x = x.view(-1, self.num_flat_features(x))
-        x = F.relu(self.fc1(x))
-        x = F.relu(self.fc2(x))
-        x = self.fc3(x)
+        # The torch.nn.functional module offers a ton of different functions you can use in your network
+        # Some commonly used ones are
+
+        # Activation functions
+        F.relu(x)
+        F.softmax(x)
+        F.sigmoid(x)
+
+        # Pooling
+        F.max_pool2d(x)
+        F.avg_pool2d(x)
+
         return x
 
-    def num_flat_features(self, x):
-        size = x.size()[1:]  # all dimensions except the batch dimension
-        num_features = 1
-        for s in size:
-            num_features *= s
-        return num_features
-
 ```
-[code source](https://pytorch.org/tutorials/beginner/introyt/introyt1_tutorial.html#pytorch-models)
 
 Once you have built a model, you can then make an instance of it (just like a python class) and then apply it to your input!
 
 Using the example above:
 
 ```python
-net = LeNet()
+net = CustomModel()
 
 input = torch.rand(1, 1, 32, 32)   
 
-output = net(input)                # we don't call forward() directly
+output = net(input) # we don't call forward() directly
 ```
 
-## Data Loading & Train/Test Splits
+## Datasets and Dataloaders
 
-When training a machine learning model, it is important to keep some of the data aside for training the model, and the rest for testing it.  PyTorch provides an easy way to accomplish this through data loaders.  Using DataLoader, we can pull a certain amount of data and define whether we are going to use it for training or testing.  We can even transform the data at the same time, using methods such as cropping or normalization.
+Datasets are a class that allows PyTorch to get one particular instance of data. Often you define this class yourself although PyTorch does include some built in. In order to define a Dataset, you need to inherit from the `torch.utils.data.Dataset` class, you must implement three methods
 
-An example of loading data using DataLoader is shown below:
+- An `__init__` function that takes any parameters and initializes the class. Often you will want to pass in the file path, a list of images or a Numpy array that contains your data.
+- A `__len__` function that returns the total number of datapoints
+- A `__getitem__` function that takes an index and returns the data. Typically, the data will be a tuple where the first element is the input to the network and the second element is the expected output of the network.
+
+
+PyTorch has a few built in dataset, here is one for the MNIST digit classification
 
 ```python
-train_loader = torch.utils.data.DataLoader(
-  torchvision.datasets.MNIST('/files/', train=True, download=True,
-                             transform=torchvision.transforms.Compose([
-                               torchvision.transforms.ToTensor(),
-                               torchvision.transforms.Normalize(
-                                 (mean,), (st_dev,))
-                             ])), batch_size=training_set_size, shuffle=True)
+train_dataset = torchvision.datasets.MNIST(
+    "/files/",
+    train=True,
+    download=True,
+    transform=torchvision.transforms.ToTensor(),
+    target_transform=torchvision.transforms.Compose(
+        [lambda x: torch.LongTensor([x]), lambda x: F.one_hot(x, 10)]
+    ),
+)
 ```
-[code source](https://pytorch.org/tutorials/beginner/introyt/introyt1_tutorial.html#pytorch-models)
+This dataset looks complicated because it applies a series of transformations to the input and output data. The `transform` parameter is what happens to the images (they get turned into a tensor). The `target_transform` is called on the output, they are originally the number from 0-9 that represent the digit but we change them to be a one-hot encoded tensor.
 
-In this example, we are loading data from a file path, as a training set.  Then, we are transforming the data to a tensor that is then being normalized using a mean and standard deviation value.  The size of the set is being set by training_set_size, and the data is being shuffled while being loaded.
+To see one of the data, you can index into it like this
+```python
+train_dataset[0]
+```
+This will be the first example, it's a tuple where the first element is a 1x28x28 tensor that represents the image and then a 10 dimentional vector with a 1 hot encoded vector. Try to display the image and print out the answer vector and make sure they make sense.
 
-A testing set can be created in the same way.
 
-The ways data can be loaded and transformed are numerous, and you can learn more [here](https://pytorch.org/vision/stable/transforms.html) if you wish.
+The dataloader is (usually) much more simple. Most of the time you will only need to define the dataset, the batch size and whether you want to shuffle your data (typically yes for training and doesn't matter for validation). 
+```python
+train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=training_set_size, shuffle=True)
+```
+
+You can create a test loader using the same technique but with a different dataset.
+
+## Optimizers
+
+PyTorch optimizers are pretty simple to use (even though they're quite complicated under the hood). Basically all you have to do is choose one of the optimizers (Usually either SGD or Adam), tell it what parameters on the model you want to optimizer and then give it the hyperparamters and you're done.
+
+
+```python
+optimizer = torch.optim.Adam(model.parameters(), lr=0.0001)
+optimizer = torch.optim.SGD(model.parameters(), lr=0.1, momentum=0.9)
+```
+
+## The training evaluation loop
+Once you have a dataloader, you can train your model. This loop will be basically the same no matter what your model is. Essentially, you need to define an Optimizer (which PyTorch takes care of) and initialize your model. Then you follow these steps to train one epoch of your model
+
+1. Zero out your gradient from the previous step
+2. Feed your batch through the model
+3. Compare your models output to the expected output using your loss function (typically called criterion)
+4. Perform backpropagation to determine the gradient
+5. Take a step in the direction of your gradient
+6. Record your loss
+
+These steps translate almost 1 to 1 into code
+
+
+```python
+for input, labels in dataloader:
+        input, labels = input.to(DEVICE), labels.to(DEVICE) # First, make sure your data is cast to your device, this really only matters for training on the GPU, but its good practice
+        optimizer.zero_grad() # 1
+        output = model(input) # 2
+        loss = criterion(output, labels) # 3
+        loss.backward() # 4
+        optimizer.step() # 5
+        losses.append(loss.item()) # 6, you call item on your loss to ignore all the extra data that comes along with it and just get the value
+```
+
+This loop is pretty much all you need to train your model for one epoch. The whole function to train for one epoch is not much more complicated.
+
+```python
+def train_epoch(model, optimizer, dataloader):
+    model.train() # You have to tell your model to go into "train" mode
+    losses = []
+    for input, labels in dataloader:
+        input, labels = input.to(DEVICE), labels.to(DEVICE)
+        optimizer.zero_grad()
+        output = model(input)
+        loss = criterion(output, labels)
+        losses.append(loss.item())
+        loss.backward()
+        optimizer.step()
+    return losses # Typically you want to keep a list of all the batch losses
+```
+
+The validation loop is very similar except that you don't want to optimize your model or calculate the gradient.
+
+```python
+def test_epoch(model, dataloader):
+    model.eval()
+    losses = []
+    
+    with torch.no_grad():
+        for input, labels in dataloader:
+            input, labels = input.to(DEVICE), labels.to(DEVICE)
+            output = model(input)
+            loss = criterion(output, labels)
+            losses.append(loss.item())
+            
+    return losses
+
+```
+
+To fully train the model, you just have to call the train_epoch function for as many epochs you have and then the model is trained! Typically, after each epoch you also want to see what the validation error is so that you can see how your model does on unknown data.
+
+
+## Creating a Neural Network
+Using the built in dataset for MNIST digits, create a dataloader for the training and testing. Then, create a simple model that flattens the input image into a 728 feature vector and then passes it through some linear layers with the activation function of your choice, make srue the output is 10 dimensional. 

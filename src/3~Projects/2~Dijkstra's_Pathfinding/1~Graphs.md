@@ -14,7 +14,7 @@ Graphs are almost always communicated visually. A graph is displayed with the no
 
 Something worth noting is that there are lots of ways to display the same graph. The thing that defines a graph is the connections between nodes, so even though these look different they have the same connections. We say that two different looking graphs that are actually the same are "isomorphic"
 
-![Isomorphic Graph Example](imgs/graphs/graph-into-isomorphic.png)
+![Isomorphic Graph Example](imgs/graphs/graph-intro-isomorphic.png)
 
 ## Weights & Directions
 
@@ -51,6 +51,7 @@ adjacency_list = [
 ```
 
 Adjacency matrices have an entry for every pair of nodes, then in that section is the weight of the edge. This is good when you need to look up an edge between two known nodes quickly. Each row is the "from" and each column the "to" so the value in row 2 and column 3 is the edge from 2 to 3. The value in the matrix will be the edge weight, or simply 0 or 1 to indicate connected/disconnected.
+
 $$
 \begin{bmatrix}
 0 & 0 & 1 & 1 & 1\\
