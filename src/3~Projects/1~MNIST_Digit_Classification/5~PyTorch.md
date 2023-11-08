@@ -236,4 +236,4 @@ To fully train the model, you just have to call the train_epoch function for as 
 
 
 ## Creating a Neural Network
-Using the built in dataset for MNIST digits, create a dataloader for the training and testing. Then, create a simple model that flattens the input image into a 728 feature vector and then passes it through some linear layers with the activation function of your choice, make srue the output is 10 dimensional. 
+Using the built in dataset for MNIST digits, create a dataloader for the training and testing. Then, create a simple model that flattens the input image into a 728 feature vector and then passes it through some linear layers with the activation function of your choice, make sure the output is 10 dimensional. Finally, run the loop to train the model for some number of epochs, you should save use the losses returned by the validation and training set to graph the performance over the number of epochs.

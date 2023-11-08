@@ -33,6 +33,7 @@ Transfer learning, also commonly called fine-tuning, is when you start your trai
 Data is one of the biggest limiting factors in how good your model will be. This is true for the relatively simple models we train here and it's true for OpenAI and Google. Therefore, it's worth explaining what makes data good or bad and how we use it. The first step in using any data is to convert it into a useful format, something that the computer can understand. Typically, this means turning your data into a vector or a matrix, ideally, this process with preserve everything important about your data and may even encode some additional information. For example, when vectorizing words, it's possible to make it so that vectors that are close together have similar meanings, this is called [word embeddings](https://www.tensorflow.org/text/guide/word_embeddings). For the images we use in computer vision, we usually just use a matrix that encodes the RGB values for each pixel (technically a tensor since there's a matrix for each channel), this also preserves important information, pixels that are close together in the image are close in the matrix. The lesson of word embeddings is still important though, if you can encode useful information in the data vectorization, model training will be faster and better.
 
 For classifying digits, what data format should we use? A reasonable first attempt would be to just have the algorithm output a value from 0 to 9 and it's selection is the closest integer, but this has a few problems. If the models sees a 1 and guessing it's a 5, that is not any better than it seeing a 1 and guessing it's a 7. We want this fact to be encapsulated in our encoding. For classification tasks, we usually want our different classification vectors to be orthogonal, since they are distinct. This might not always be the case, but it is for recognizing digits. So how do we encode digits? The most common method is called one-hot encoding. If we have n classes, then our encoding is an n-dimensional vector where one of the components is 1 and the rest are 0. The "one-hot" component marks the class. For example, for digits we'd have the first component of the vector represent 0, the second 1, etc. 
+
 $$
 2 \mapsto \begin{bmatrix}
 0 \\
@@ -71,6 +72,7 @@ $$
 1 \\
 \end{bmatrix}
 $$
+
 Its important to note that which class goes to which component is arbitrary, as long as it's consistent. You can think of each component as the probability that the image is of a certain class, since we know the answer with certainty, the values are either 1 or 0.
 
 ### Normalization
