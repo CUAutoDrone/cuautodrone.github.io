@@ -236,4 +236,11 @@ To fully train the model, you just have to call the train_epoch function for as 
 
 
 ## Creating a Neural Network
-Using the built in dataset for MNIST digits, create a dataloader for the training and testing. Then, create a simple model that flattens the input image into a 728 feature vector and then passes it through some linear layers with the activation function of your choice, make sure the output is 10 dimensional. Finally, run the loop to train the model for some number of epochs, you should save use the losses returned by the validation and training set to graph the performance over the number of epochs.
+Using the built in dataset for MNIST digits, create a dataloader for the training and testing. Then, create a simple model that flattens the input image into a 784 dimensional feature vector and then passes it through some linear layers with the activation function of your choice, make sure the output is 10 dimensional. Finally, run the loop to train the model for some number of epochs, you should save use the losses returned by the validation and training set to graph the performance over the number of epochs.
+
+1. Define a model using a custom class that implements a feed forward neural network, you should also define a loss function (outside the class), I recommend cross entropy loss (which you can find out how to use from the PyTorch docs) but you can try others as well.
+2. Create the training and testing datasets using the code I gave you
+3. Create the training and testing dataloader with the appropriate parameters
+4. Define an optimizer, you can use SDG or Adam, I encourage you to play around with the hyperparameters (and maybe even try out some different optimizers, there are a bunch listed on the PyTorch documentation)
+5. Train your model for some number of epochs, saving the losses so that you can graph them
+6. Graph the training and validation loss per epoch, you can also graph all of the batch losses but you will find they are very noisy and the graph is hard to read.

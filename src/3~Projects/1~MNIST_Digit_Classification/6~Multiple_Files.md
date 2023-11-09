@@ -43,7 +43,7 @@ If you have a preprocessing step with custom functions, this is where you should
 This is where you will define your dataset and dataloader, typically it will outline a process for loading files and getting a train/validation split
 ## engine.py
 This is the file that actually trains the model, it runs the training loop for as many epochs as defined in config.
-# inference.py
+## inference.py
 This is where you write the code that uses the model and outputs human readable or otherwise useful information, for example, if you were doing bounding box detection, you might write a script that takes in new images and draws the predicted bounding box.
 
 
