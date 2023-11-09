@@ -125,6 +125,7 @@ $$
 ![Leaky ReLU Graph](imgs/nns/leaky-relu.png)
 
 **SoftMax** is an activation function that is commonly used in classification NNs in the last layer. It takes all of the activation values in the last layer and changed them so that they sum to 1 and retain the same relative order. This means that you can interpret the last layer after SoftMax as a probability distribution where the closer the value is to 1, the more confident the network is that is the answer. Since this graph depends on all the values of the layer, it doesn't really have a graph like the other activation functions.
+
 $$
 \phi(x_i) = \frac{e^{x_i}}{\sum_{x_j \in x}e^{x_j}}
 $$
