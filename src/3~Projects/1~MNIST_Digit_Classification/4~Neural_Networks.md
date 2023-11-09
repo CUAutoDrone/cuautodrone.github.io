@@ -41,6 +41,7 @@ W =
    b_1 & \dots & b_m
 \end{bmatrix}
 $$
+
 $$
 a_l = \phi(a_{l-1} \cdot W^\intercal + b)
 $$
@@ -48,6 +49,7 @@ $$
 The weight matrix now records all of the weights between two layer, where $w_{i,j}$ represents the weight from the $j^{th}$ neuron in layer $l-1$ to the $i^{th}$ neuron in layer $l$ . This feels backwards but it turns out to be useful in computation, and at this point it's a convention.
 
 Side note, when we run a vector through the activation function, that's actually just shorthand for applying the function to each component of the vector.
+
 $$
 f \big( \begin{bmatrix}
    v_1 & v_2 & \dots & v_n
@@ -60,16 +62,21 @@ The goal of the neural network is to be able to approximate any function. The fu
 
 ## Loss functions
 The final part of the NN architecture is the loss function. This is the function we use to compare the output our NN gave us (the activation of our output layer) with the correct answer (the vector that is part of our training data). There are lots of different loss functions, some of which are very complicated, but fundamentally, what they are doing is very simple. If we have two vectors, we want to encapsulate how "close" they are. Small values will mean that the two vectors are close (which means our NN is close to predicting the correct answer) and large values mean the opposite. The most basic possible loss function would simply be the average of all the differences between the values. That is if we had an n-dimensional output vector $y$ , and the vector we wanted $\hat{y}$ . Then the loss function would be:
+
 $$
 \frac{1}{n}\sum_{i=1}^n |y_i - \hat{y}_i|
 $$
+
 This is probably the most intuitive loss function, when the vectors are identical, its value is 0, otherwise it will be positive. This would work fine as a loss function (it's called L1 loss or mean absolute error) but there are a few problems that hurt it in practice. First, the absolute value makes it hard to take the derivative (which is important for training). Additionally, imagine we had a vector that was 1 million elements long. If each of those values was off by 1, then the total loss would be 1. Alternatively, we could have a vector where 1 million - 1 elements are off by .5 and the last is off by half a million. Both of these give the same loss (almost) but the first is probably preferable. It's usually better to have lots of slightly wrong values than to have one value that is way off. We can fix both of these issue by replacing the absolute value with a square.
+
 $$
 \frac{1}{n}\sum_{i=1}^n (y_i - \hat{y}_i)^2
 $$
-Now, outlier values are punished more and the function has a nice derivative. This loss function is called Mean Square Error (MSE).
+
+Now, outlier values are punished more and the function has a nice derivative. This loss function is called Mean Square Error (MSE). You can also think of this function as calculating the squared distance between the two vectors.
 
 The last loss function we'll talk about is called the Cross-Entropy Loss function. It is commonly used for classification problems. It requires that the output values sum to 1 which corresponds to the networks "predicted probability" of each class, essentially how confident the network is that the input data is of that class. This is usually achieved with SoftMax, an activation function explained later (technically, PyTorch does this step for you when using Cross Entropy). Additionally, the encoding scheme also needs to be one-hot. The specifics of why the Cross-Entropy function works well don't matter right now, but since this is one the most commonly used loss functions for classification, it's worth knowing about. For $C$ total classes, the function is
+
 $$
 -\sum_{c=1}^C \hat{y}_c \log{y_c}
 $$
@@ -89,24 +96,32 @@ Calculating the approximate gradient rather than the true gradient actually has 
 The reason that we pass the value through the activation function because it's necessary to allow us to approximate any function. Without the activation function, it can only approximate one kind of function, a line. This is because the neurons (without an activation function) would just be performing a linear transformation (a multiplication and addition) and any combination of linear transformations is still going to be a linear transformation. The way around this is to pass the input to our neuron into a non-linear activation function. The function needs to be non-linear because otherwise we are just doing another linear transformation and we're back to where we started. Other than that, it can technically be any non-linear function, but we want it to be defined for all inputs and there are a few common ones that have some nice properties.
 
 **Sigmoid** is a function that will squish all values to between 0 and 1 smoothly. It roughly approximates the binary nature of a biological neuron, it will either fire, or not fire. This function suffers from something called the "vanishing gradient" problem, since for all values of $x$ , the derivative of sigmoid is less than 1, for deep networks, the gradient can become very small. This is because, by the chain rule, the derivative of each layer is multiplied and multiplying by a value less than 1 shrinks the value. This means that for NNs with many layers the gradient can shrink towards 0 and the network can't learn.
+
 $$\phi(x) = \frac{1}{1+e^{-x}}$$
+
 ![Sigmoid Graph](imgs/nns/sigmoid.png)
 
 **Tanh**, the hyperbolic tangent is a function very similar to the sigmoid function, however it squishes values to between -1 and 1 and has a steeper slope. It is used for many of the same reasons as sigmoid but its steeper slope can help it learn faster in some scenarios. However, since the derivative is still $\leq 1$ it still suffers from the vanishing gradient problem.
+
 $$\phi(x) = \tanh(x) = \frac{e^x+e^{-x}}{e^x-e^{-x}}$$
+
 ![Hyperbolic Tangent Graph](imgs/nns/tanh.png)
 
 **ReLU**, the Rectified Linear Unit is a very simple function that is very fast to compute (both the value and the derivative). Additionally, it doesn't suffer from the vanishing gradient problem like sigmoid and tanh. This function is commonly used for larger neural networks because of these properties. You might think that the derivative being undefined at 0 would be a problem, but in practice, we can just define it to be either 1 or 0 and it's rare that it even comes up.
+
 $$\phi(x) = \max{(0, x)}$$
+
 ![ReLU Graph](imgs/nns/relu.png)
 
 **Leaky ReLU** is a modified version of ReLU that addresses the main weakness of ReLU which is that for many cases, the derivative is 0, as we will see later, this can lead to what is called "dead" neurons that can't learn. The trade off is that this function is more expensive to compute (though not much). Despite the advantages of leaky ReLU, standard ReLU is still commonly used. A value of $\alpha < 1$ is chosen before training.
+
 $$
 \phi(x) = \begin{cases}
    x &\text{if } x \geq 0 \\
    \alpha x &\text{if } x < 0
 \end{cases}
 $$
+
 ![Leaky ReLU Graph](imgs/nns/leaky-relu.png)
 
 **SoftMax** is an activation function that is commonly used in classification NNs in the last layer. It takes all of the activation values in the last layer and changed them so that they sum to 1 and retain the same relative order. This means that you can interpret the last layer after SoftMax as a probability distribution where the closer the value is to 1, the more confident the network is that is the answer. Since this graph depends on all the values of the layer, it doesn't really have a graph like the other activation functions.
@@ -119,6 +134,7 @@ The specifics of the matrix math used for neural networks varies widely, this is
 
 ___
 You might see the bias folded into the weight matrix by adding an extra constant 1 to the data (and each layer), and an extra column to the weight matrix. This simplifies the computation and code but thinking of the bias as a separate vector that is added later makes it more clear what is actually happening. Really, this is just a computational trick that's worth knowing about. Now the weight+bias matrix will look like
+
 $$
 \begin{bmatrix}
    w_{1,1} & \dots & w_{1,n} & b_1\\
@@ -126,12 +142,15 @@ $$
    w_{m,1} & \dots & w_{m,n} & b_m
 \end{bmatrix}
 $$
+
 and the layer vector will look like
+
 $$
 a_l = \begin{bmatrix}
    a_{l,1} & a_{l,2} & \dots & a_{l,n} & 1
 \end{bmatrix}
 $$
+
 ___
 Another optimization is when doing a feed forward and backpropagation step on each piece of training data, we can actually do a lot of that in parallel. To do this, we just replace the row vector we've been using with a matrix where each row is a different training sample. Then we do the same matrix multiplications and calculate the loss function row-wise. 
 ___
