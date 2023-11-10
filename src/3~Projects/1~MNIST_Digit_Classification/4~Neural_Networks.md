@@ -61,7 +61,7 @@ $$
 The goal of the neural network is to be able to approximate any function. The function will take in the input layer (a vector often denoted $x$ ) and output the output layer (another vector often denoted $y$ ). If you're familiar with the notation, think of this as a function $f: \Reals^\text{in} \mapsto \Reals^\text{out}$ . We want it so that when we choose the correct values for the weights and biases, we get a function where every input gives us the correct input (for example giving it a picture of a 4, at it classifying it as a 4). This is why we need to represent all of our data as vectors. That way we can think of the "correct" answers as a function that maps inputs (like images) to outputs (like choices for digits).
 
 ## Loss functions
-The final part of the NN architecture is the loss function. This is the function we use to compare the output our NN gave us (the activation of our output layer) with the correct answer (the vector that is part of our training data). There are lots of different loss functions, some of which are very complicated, but fundamentally, what they are doing is very simple. If we have two vectors, we want to encapsulate how "close" they are. Small values will mean that the two vectors are close (which means our NN is close to predicting the correct answer) and large values mean the opposite. The most basic possible loss function would simply be the average of all the differences between the values. That is if we had an n-dimensional output vector $y$ , and the vector we wanted $\hat{y}$ . Then the loss function would be:
+The final part of the NN architecture is the loss function. This is the function we use to compare the output our NN gave us (the activation of our output layer) with the correct answer (the vector that is part of our training data). There are lots of different loss functions, some of which are very complicated, but fundamentally, what they are doing is very simple. If we have two vectors, we want to encapsulate how "close" they are. Small values will mean that the two vectors are close (which means our NN is close to predicting the correct answer) and large values mean the opposite. The most basic possible loss function would simply be the average of all the differences between the values. That is if we had an n-dimensional output vector $\hat{y}$ , and the vector we wanted $y$ . Then the loss function would be:
 
 $$
 \frac{1}{n}\sum_{i=1}^n |y_i - \hat{y}_i|
@@ -78,7 +78,7 @@ Now, outlier values are punished more and the function has a nice derivative. Th
 The last loss function we'll talk about is called the Cross-Entropy Loss function. It is commonly used for classification problems. It requires that the output values sum to 1 which corresponds to the networks "predicted probability" of each class, essentially how confident the network is that the input data is of that class. This is usually achieved with SoftMax, an activation function explained later (technically, PyTorch does this step for you when using Cross Entropy). Additionally, the encoding scheme also needs to be one-hot. The specifics of why the Cross-Entropy function works well don't matter right now, but since this is one the most commonly used loss functions for classification, it's worth knowing about. For $C$ total classes, the function is
 
 $$
--\sum_{c=1}^C \hat{y}_c \log{y_c}
+-\sum_{c=1}^C y_c \log{\hat{y}_c}
 $$
 
 ## Training a Neural Network
