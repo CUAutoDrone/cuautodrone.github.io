@@ -61,7 +61,7 @@ Like matrices, tensors also have operations including:
 - Creating from data only if certain conditions are met
 - Returning a filled tensor of a specified number
 
-Essentially all of the Numpy functions we talked about have an equivalent function in PyTorch. 
+Essentially all of the Numpy functions we talked about have an equivalent function in PyTorch. One difference is that the "reshape" operation in PyTorch is called `view`, so to reshape a tensor you can call `my_tensor.view(5,10)`, it also takes the reshaped values as separate parameters rather than a tuple. Other than that it acts the same as reshape. The reason its called view is because under the hood, its not actually creating a copy, whereas reshape would.
 
 Learn more tensor operations [here](https://pytorch.org/docs/stable/torch.html).
 
