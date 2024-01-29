@@ -4,7 +4,7 @@ Members who take CUAD will receive a grade at the end of the semester, since the
 
 If you are a freshman, you will enroll in an introductory Project Team Course, ENGRG 1400, led by the College of Engineering for 1 credit. This class is S/U and has a series of assignments that you must complete by the end of the semester.
 
-If you are an upperclassman or in your second semester with CUAD, you can enroll in ENGRG 3400 for up to 2 credits. These credits will be graded.
+If you are an upperclassman or in your second semester with CUAD, you can enroll in ENGRG 3400 for up to 3 credits. These credits will be graded.
 
 The grading guidelines for CUAD are included below for clarity.  These are just to ensure that you are putting in an appropriate amount of commitment towards CUAD, and making a genuine effort to learn and be involved with the team!
 
@@ -14,24 +14,15 @@ Keep in mind, the amount of credits you are taking CUAD for will impact how many
 
 | Category                     | Percentage |
 |------------------------------|------------|
-| Subteam Attendance           | 25  |
-| GBody Attendance             | 20  |
-| End of Year Eval From Leads  | 15  |
-| Github Progress Update       | 10  |
-| End of Semester Report       | 30  |
-| Total                        | 100 |
+| Attendance                   |  45  |
+| Mid semester Report          |  20  |
+| End of Semester Report       |  35  |
+| Total                        |  100 |
 
 ## Attendance Policy
 
-### Subteam Meetings
-- Members should try to notify absences to their subteam lead and project members a week in advance.
-- Members are expected to add absences from work sessions to the shared subteam google calendar.
-- Members are expected to maintain an absence thread in Slack in order to properly inform subteam members.
-- Members are expected makeup hours they missed individually.
-- Members are expected to log their hours and how they were spent on a weekly basis.
-
-### GBody
-- Members can miss up to 5 gbodies with notice 24 hours before with good reason
+### Meetings
+- At every Gbody and subteam meeting attendance will be taken. Over the course of the semester you are allowed 4 free absences, this is to account for things like a busy week, getting the flu etc. if possible you should let your lead know when you are using one of these absences but it is not necessary. If you have a prelim the same day as a meeting, that counts as an excused absence and won't count against you. Finally, for emergencies please reach out to your lead with the situation
 
 ### Exceptions
 - Members are excused from late notifications in case of emergences or other extenuating circumstances
